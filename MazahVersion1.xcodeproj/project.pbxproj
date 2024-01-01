@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		D20D0CB22B0E797C00DC1109 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20D0CB12B0E797C00DC1109 /* RootView.swift */; };
 		D20D0CB42B0E7C2700DC1109 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20D0CB32B0E7C2700DC1109 /* SettingsView.swift */; };
+		D228AB9A2B17FAC60034E574 /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D228AB992B17FAC60034E574 /* SettingViewModel.swift */; };
+		D228ABA02B17FB990034E574 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D228AB9F2B17FB990034E574 /* ProfileView.swift */; };
+		D228ABA22B17FE460034E574 /* FirstView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D228ABA12B17FE460034E574 /* FirstView.swift */; };
 		D25D64562B0A93C30014D33C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D25D64552B0A93C30014D33C /* GoogleService-Info.plist */; };
 		D25D64592B0A97BF0014D33C /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = D25D64582B0A97BF0014D33C /* FirebaseAnalytics */; };
 		D25D645B2B0A97BF0014D33C /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = D25D645A2B0A97BF0014D33C /* FirebaseAnalyticsOnDeviceConversion */; };
@@ -38,26 +41,33 @@
 		D25D648B2B0A97BF0014D33C /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = D25D648A2B0A97BF0014D33C /* FirebaseStorage */; };
 		D25D648D2B0A97BF0014D33C /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = D25D648C2B0A97BF0014D33C /* FirebaseStorageCombine-Community */; };
 		D25D64912B0A9EC50014D33C /* AuthenticationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25D64902B0A9EC50014D33C /* AuthenticationView.swift */; };
+		D283F9952B4367A700F0767E /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D283F9942B4367A700F0767E /* UserManager.swift */; };
 		D28864652B0AA30700D85D4F /* SignInEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28864642B0AA30700D85D4F /* SignInEmailView.swift */; };
 		D288646A2B0AA70F00D85D4F /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28864692B0AA70F00D85D4F /* AuthenticationManager.swift */; };
 		D29CD57A2B0A8E0100C68EE3 /* MazahVersion1App.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29CD5792B0A8E0100C68EE3 /* MazahVersion1App.swift */; };
-		D29CD57C2B0A8E0100C68EE3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29CD57B2B0A8E0100C68EE3 /* ContentView.swift */; };
 		D29CD57E2B0A8E0700C68EE3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D29CD57D2B0A8E0700C68EE3 /* Assets.xcassets */; };
 		D29CD5812B0A8E0700C68EE3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D29CD5802B0A8E0700C68EE3 /* Preview Assets.xcassets */; };
+		D2F4ABBF2B39E76900494F89 /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F4ABBE2B39E76900494F89 /* AuthenticationViewModel.swift */; };
+		D2F4ABC32B39E85F00494F89 /* SignInEmailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F4ABC22B39E85F00494F89 /* SignInEmailViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D20D0CB12B0E797C00DC1109 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		D20D0CB32B0E7C2700DC1109 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		D228AB992B17FAC60034E574 /* SettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModel.swift; sourceTree = "<group>"; };
+		D228AB9F2B17FB990034E574 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		D228ABA12B17FE460034E574 /* FirstView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstView.swift; sourceTree = "<group>"; };
 		D25D64552B0A93C30014D33C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		D25D64902B0A9EC50014D33C /* AuthenticationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationView.swift; sourceTree = "<group>"; };
-		D28864642B0AA30700D85D4F /* SignInEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SignInEmailView.swift; path = ../SignInEmailView.swift; sourceTree = "<group>"; };
+		D25D64902B0A9EC50014D33C /* AuthenticationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AuthenticationView.swift; path = "../New Group/AuthenticationView.swift"; sourceTree = "<group>"; };
+		D283F9942B4367A700F0767E /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
+		D28864642B0AA30700D85D4F /* SignInEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInEmailView.swift; sourceTree = "<group>"; };
 		D28864692B0AA70F00D85D4F /* AuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
 		D29CD5762B0A8E0100C68EE3 /* MazahVersion1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MazahVersion1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D29CD5792B0A8E0100C68EE3 /* MazahVersion1App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MazahVersion1App.swift; sourceTree = "<group>"; };
-		D29CD57B2B0A8E0100C68EE3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		D29CD57D2B0A8E0700C68EE3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D29CD5802B0A8E0700C68EE3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		D2F4ABBE2B39E76900494F89 /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
+		D2F4ABC22B39E85F00494F89 /* SignInEmailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInEmailViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,14 +108,57 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		D28864682B0AA6B300D85D4F /* Authentication */ = {
+		D228AB962B17FA410034E574 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D228AB972B17FA940034E574 /* Core */ = {
 			isa = PBXGroup;
 			children = (
 				D20D0CB12B0E797C00DC1109 /* RootView.swift */,
+				D228ABA12B17FE460034E574 /* FirstView.swift */,
+				D228AB9E2B17FB8A0034E574 /* Profile */,
+				D2F4ABBD2B39E73500494F89 /* Authentication */,
+				D228AB982B17FAAE0034E574 /* Settings */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		D228AB982B17FAAE0034E574 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
 				D20D0CB32B0E7C2700DC1109 /* SettingsView.swift */,
-				D25D64902B0A9EC50014D33C /* AuthenticationView.swift */,
+				D228AB992B17FAC60034E574 /* SettingViewModel.swift */,
+			);
+			name = Settings;
+			path = ../Settings;
+			sourceTree = "<group>";
+		};
+		D228AB9E2B17FB8A0034E574 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				D228AB9F2B17FB990034E574 /* ProfileView.swift */,
+			);
+			name = Profile;
+			path = ../Profile;
+			sourceTree = "<group>";
+		};
+		D283F9932B43676F00F0767E /* Firestore */ = {
+			isa = PBXGroup;
+			children = (
+				D283F9942B4367A700F0767E /* UserManager.swift */,
+			);
+			name = Firestore;
+			path = Core;
+			sourceTree = "<group>";
+		};
+		D28864682B0AA6B300D85D4F /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
 				D28864692B0AA70F00D85D4F /* AuthenticationManager.swift */,
-				D28864642B0AA30700D85D4F /* SignInEmailView.swift */,
 			);
 			name = Authentication;
 			path = "New Group";
@@ -116,6 +169,7 @@
 			children = (
 				D29CD5782B0A8E0100C68EE3 /* MazahVersion1 */,
 				D29CD5772B0A8E0100C68EE3 /* Products */,
+				D228AB962B17FA410034E574 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -131,7 +185,8 @@
 			isa = PBXGroup;
 			children = (
 				D29CD5792B0A8E0100C68EE3 /* MazahVersion1App.swift */,
-				D29CD57B2B0A8E0100C68EE3 /* ContentView.swift */,
+				D283F9932B43676F00F0767E /* Firestore */,
+				D228AB972B17FA940034E574 /* Core */,
 				D28864682B0AA6B300D85D4F /* Authentication */,
 				D25D64552B0A93C30014D33C /* GoogleService-Info.plist */,
 				D29CD57D2B0A8E0700C68EE3 /* Assets.xcassets */,
@@ -146,6 +201,25 @@
 				D29CD5802B0A8E0700C68EE3 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		D2F4ABBD2B39E73500494F89 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				D25D64902B0A9EC50014D33C /* AuthenticationView.swift */,
+				D2F4ABBE2B39E76900494F89 /* AuthenticationViewModel.swift */,
+				D2F4ABC12B39E81F00494F89 /* Subviews */,
+			);
+			name = Authentication;
+			sourceTree = "<group>";
+		};
+		D2F4ABC12B39E81F00494F89 /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				D28864642B0AA30700D85D4F /* SignInEmailView.swift */,
+				D2F4ABC22B39E85F00494F89 /* SignInEmailViewModel.swift */,
+			);
+			name = Subviews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -252,11 +326,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				D20D0CB42B0E7C2700DC1109 /* SettingsView.swift in Sources */,
-				D29CD57C2B0A8E0100C68EE3 /* ContentView.swift in Sources */,
+				D228ABA02B17FB990034E574 /* ProfileView.swift in Sources */,
 				D29CD57A2B0A8E0100C68EE3 /* MazahVersion1App.swift in Sources */,
+				D228AB9A2B17FAC60034E574 /* SettingViewModel.swift in Sources */,
 				D20D0CB22B0E797C00DC1109 /* RootView.swift in Sources */,
 				D25D64912B0A9EC50014D33C /* AuthenticationView.swift in Sources */,
+				D283F9952B4367A700F0767E /* UserManager.swift in Sources */,
+				D2F4ABBF2B39E76900494F89 /* AuthenticationViewModel.swift in Sources */,
+				D2F4ABC32B39E85F00494F89 /* SignInEmailViewModel.swift in Sources */,
 				D288646A2B0AA70F00D85D4F /* AuthenticationManager.swift in Sources */,
+				D228ABA22B17FE460034E574 /* FirstView.swift in Sources */,
 				D28864652B0AA30700D85D4F /* SignInEmailView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

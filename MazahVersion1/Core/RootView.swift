@@ -14,10 +14,9 @@ struct RootView: View {
     var body: some View {
         ZStack{
             NavigationStack{
-                SettingsView(showSignInView: $showSignInView)
+                ProfileView(showSignInView: $showSignInView)
             }
         }
-        
         .onAppear{
             let authUser = try?  AuthenticationManager.shared.getAuthenticatedUser()
             self.showSignInView = authUser == nil
@@ -33,3 +32,4 @@ struct RootView: View {
 #Preview {
     RootView()
 }
+

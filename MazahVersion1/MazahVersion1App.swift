@@ -15,7 +15,7 @@ struct MazahVersion1App: App {
    
     var body: some Scene {
         WindowGroup {
-            RootView()
+            FirstView()
             }
         }
     }
