@@ -49,6 +49,8 @@
 		D29CD5812B0A8E0700C68EE3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D29CD5802B0A8E0700C68EE3 /* Preview Assets.xcassets */; };
 		D2F4ABBF2B39E76900494F89 /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F4ABBE2B39E76900494F89 /* AuthenticationViewModel.swift */; };
 		D2F4ABC32B39E85F00494F89 /* SignInEmailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F4ABC22B39E85F00494F89 /* SignInEmailViewModel.swift */; };
+		F440F6632B443DAC00EC7F1C /* SeoulHangang.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F440F6622B443DAC00EC7F1C /* SeoulHangang.ttf */; };
+		F440F6652B443E2800EC7F1C /* RadioCanada.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F440F6642B443E2800EC7F1C /* RadioCanada.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +70,8 @@
 		D29CD5802B0A8E0700C68EE3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D2F4ABBE2B39E76900494F89 /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
 		D2F4ABC22B39E85F00494F89 /* SignInEmailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInEmailViewModel.swift; sourceTree = "<group>"; };
+		F440F6622B443DAC00EC7F1C /* SeoulHangang.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SeoulHangang.ttf; sourceTree = "<group>"; };
+		F440F6642B443E2800EC7F1C /* RadioCanada.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = RadioCanada.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +171,8 @@
 		D29CD56D2B0A8E0100C68EE3 = {
 			isa = PBXGroup;
 			children = (
+				F440F6642B443E2800EC7F1C /* RadioCanada.ttf */,
+				F440F6622B443DAC00EC7F1C /* SeoulHangang.ttf */,
 				D29CD5782B0A8E0100C68EE3 /* MazahVersion1 */,
 				D29CD5772B0A8E0100C68EE3 /* Products */,
 				D228AB962B17FA410034E574 /* Frameworks */,
@@ -312,6 +318,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F440F6632B443DAC00EC7F1C /* SeoulHangang.ttf in Resources */,
+				F440F6652B443E2800EC7F1C /* RadioCanada.ttf in Resources */,
 				D29CD5812B0A8E0700C68EE3 /* Preview Assets.xcassets in Resources */,
 				D29CD57E2B0A8E0700C68EE3 /* Assets.xcassets in Resources */,
 				D25D64562B0A93C30014D33C /* GoogleService-Info.plist in Resources */,
