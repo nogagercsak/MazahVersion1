@@ -17,12 +17,36 @@ final class ProfileViewModel: ObservableObject{
         self.user = try await UserManager.shared.getUser(userId: authDataResult.uid)
     }
     
+    func addUserFood(text: String) {
+        guard let user else { return }
+        
+        Task {
+            try await UserManager.shared.addUserFood(userId: user.userId, food: text)
+            self.user = try await UserManager.shared.getUser(userId: user.userId)
+        }
+    }
+    
+    func removeUserFood(text: String) {
+        guard let user else { return }
+        
+        Task {
+            try await UserManager.shared.removeUserFood(userId: user.userId, food: text)
+            self.user = try await UserManager.shared.getUser(userId: user.userId)
+        }
+    }
+    
 }
 
 struct ProfileView: View {
     
     @StateObject private var viewModel = ProfileViewModel()
     @Binding var showSignInView: Bool
+    
+    let foodOptions: [String] = ["Dairy", "Produce", "Meat"]
+    
+    private func foodIsSelected(text: String) -> Bool {
+        viewModel.user?.food?.contains(text) ==  true
+    }
     
     var body: some View {
         List{
@@ -32,7 +56,26 @@ struct ProfileView: View {
                 if let email = user.email{
                     Text("Email: \(email.description)")
                 }
-                
+                VStack{
+                    HStack{
+                        ForEach(foodOptions, id:  \.self) { string in
+                            Button(string){
+                                if foodIsSelected(text: string){
+                                    viewModel.removeUserFood(text: string)
+                                } else {
+                                    viewModel.addUserFood(text: string)
+                                }
+                                viewModel.addUserFood(text: string)
+                            }
+                            .font(.headline)
+                            .buttonStyle(.borderedProminent)
+                            .tint(foodIsSelected(text: string) ?.green : .red)
+                        }
+                    }
+                    
+                    Text("Foods: \((user.food ?? []).joined(separator: ", "))")
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                }
             }
         }
         .task{
@@ -54,8 +97,6 @@ struct ProfileView: View {
 
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationStack{
-            ProfileView(showSignInView: .constant(false ))
-        }
+        RootView()
     }
 }
