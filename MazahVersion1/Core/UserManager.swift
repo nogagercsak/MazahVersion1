@@ -9,11 +9,18 @@ import Foundation
 import FirebaseFirestore
 import FirebaseFirestoreSwift
 
+struct Vegetable: Codable {
+    let id: String
+    let title: String
+    let recentlyBought: Bool
+}
+
 struct DBUser: Codable {
     let userId: String
     let email: String?
     let dateCreated: Date?
     let food: [String]?
+    let favVegetable: Vegetable?
 
     
     init(auth: AuthDataResultModel) {
@@ -21,24 +28,28 @@ struct DBUser: Codable {
         self.email = auth.email
         self.dateCreated = Date()
         self.food = nil
+        self.favVegetable = nil
     }
     
     init(
         userId: String,
         email: String? = nil,
         dateCreated: Date? = nil,
-        food: [String]? = nil
+        food: [String]? = nil,
+        favVegetable: Vegetable? = nil
     ) {
         self.userId = userId
         self.email = email
         self.dateCreated = dateCreated
         self.food = food
+        self.favVegetable = favVegetable
     }
     enum CodingKeys: String, CodingKey {
         case email = "email"
         case userId = "user_id"
         case dateCreated = "date_created"
         case food = "food"
+        case favVegetable = "fav_vegetable"
     }
     
     init(from decoder: Decoder) throws {
@@ -46,7 +57,8 @@ struct DBUser: Codable {
         self.userId = try container.decode(String.self, forKey: .userId)
         self.email = try container.decodeIfPresent(String.self, forKey: .email)
         self.dateCreated = try container.decodeIfPresent(Date.self, forKey: .dateCreated)
-        self.food = try container.decodeIfPresent([String] .self, forKey: .food)
+        self.food = try container.decodeIfPresent([String].self, forKey: .food)
+        self.favVegetable = try container.decodeIfPresent(Vegetable.self, forKey: .favVegetable)
     }
     
     func encode(to encoder: Encoder) throws {
@@ -55,6 +67,7 @@ struct DBUser: Codable {
         try container.encodeIfPresent(self.email, forKey: .email)
         try container.encodeIfPresent(self.dateCreated, forKey: .dateCreated)
         try container.encodeIfPresent(self.food, forKey: .food)
+        try container.encodeIfPresent(self.favVegetable, forKey: .favVegetable)
     }
 }
 
@@ -69,17 +82,17 @@ final class UserManager{
         userCollection.document(userId)
     }
     
- /*   private let encoder:Firestore.Encoder = {
+    private let encoder: Firestore.Encoder = {
         let encoder = Firestore.Encoder()
-        encoder.keyEncodingStrategy = .convertToSnakeCase
+        //encoder.keyEncodingStrategy = .convertToSnakeCase
         return encoder
-    }
+    }()
     
-    private let decoder:Firestore.Decoder = {
+    private let decoder: Firestore.Decoder = {
         let decoder = Firestore.Decoder()
-        Decoder.keyDecodingStrategy = .convertFromSnakeCase
+        //Decoder.keyDecodingStrategy = .convertFromSnakeCase
         return decoder
-    } */
+    }()
     
     func createNewUser(user:DBUser) async throws {
         try userDocument(userId: user.userId).setData(from: user, merge: false)
@@ -118,21 +131,23 @@ final class UserManager{
         try await userDocument(userId: userId).updateData(data)
     }
     
-    
-/*    func getUser(userId: String) async throws -> DBUser {
-        let snapshot = try await userDocument(userId: userId).getDocument()
-        
-        guard let data = snapshot.data(), let userId = data["user_id"] as? String else{
-            throw URLError(.badServerResponse)
-        }
-        
-        let email = data["email"] as? String
-        let photoUrl = data["photo_url"] as? String
-        let dateCreated = data["data_created"] as? Date
-        
-        return DBUser(userId: userId, email: email, photoUrl: photoUrl, dateCreated: dateCreated)
-    } */
-    
-    
+    func addFavVegetable(userId: String, vegetable: Vegetable) async throws {
+        let vegetableData: [String: Any] = [
+            "id": vegetable.id,
+            "title": vegetable.title,
+            "recentlyBought": vegetable.recentlyBought
+        ]
+        let dict: [String: Any] = [
+            DBUser.CodingKeys.favVegetable.rawValue: vegetableData
+        ]
+        try await userDocument(userId: userId).updateData(dict)
     }
+    
+    func removeFavVegetable(userId: String) async throws{
+        let data: [String:Any?] = [
+            DBUser.CodingKeys.favVegetable.rawValue : nil
+        ]
+        try await userDocument(userId: userId).updateData(data as [AnyHashable : Any])
+    }
+}
 

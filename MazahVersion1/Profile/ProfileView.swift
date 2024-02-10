@@ -35,6 +35,24 @@ final class ProfileViewModel: ObservableObject{
         }
     }
     
+    func addFavVegetable() {
+        guard let user else { return }
+        let vegetable = Vegetable(id: "1", title: "Spinach", recentlyBought: true)
+        Task {
+            try await UserManager.shared.addFavVegetable(userId: user.userId, vegetable: vegetable)
+            self.user = try await UserManager.shared.getUser(userId: user.userId)
+        }
+    }
+    
+    func removeFavVegetable() {
+        guard let user else { return }
+        Task {
+            try await UserManager.shared.removeFavVegetable(userId: user.userId)
+            self.user = try await UserManager.shared.getUser(userId: user.userId)
+        }
+    }
+
+    
 }
 
 struct ProfileView: View {
@@ -76,6 +94,16 @@ struct ProfileView: View {
                     Text("Foods: \((user.food ?? []).joined(separator: ", "))")
                         .frame(maxWidth: .infinity, alignment: .leading)
                 }
+                Button {
+                    if user.favVegetable == nil {
+                        viewModel.addFavVegetable()
+                    } else {
+                        viewModel.removeFavVegetable()
+                    }
+                } label: {
+                    Text("Favorite Vegetable: \((user.favVegetable?.title ?? ""))")
+                }
+                
             }
         }
         .task{
