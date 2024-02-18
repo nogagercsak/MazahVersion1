@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct Tracker1View: View {
+    
     var body: some View {
         VStack {
             Text("< Go back to Foods")

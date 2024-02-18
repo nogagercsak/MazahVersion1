@@ -8,6 +8,10 @@
 import SwiftUI
 
 struct AddFoodView: View {
+    @State private var foodName: String = ""
+    @State private var creationDate: String = ""
+    @State private var foodType: String = ""
+    @State private var notesVar: String = ""
     var body: some View {
         VStack {
             Text("< Go back to Foods")
@@ -31,7 +35,7 @@ struct AddFoodView: View {
                     .cornerRadius(10)
                     .offset(x: 0, y: -60)
                 VStack {
-                    Text("Food Name")
+                    TextField("Food Name", text: $foodName)
                         .font(Font.custom("Inter", size: 19))
                         .foregroundColor(Color(red: 0.34, green: 0.41, blue: 0.34))
                         .frame(width: 179, height: 24, alignment: .topLeading)
@@ -41,7 +45,7 @@ struct AddFoodView: View {
                         .frame(width: 307.9993, height: 1)
                         .background(.white)
                         .offset(x: 0, y: -60)
-                    Text("Notes")
+                    TextField("Notes", text: $notesVar)
                         .font(Font.custom("Inter", size: 19))
                         .foregroundColor(Color(red: 0.34, green: 0.41, blue: 0.34))
                         .frame(width: 179, height: 24, alignment: .topLeading)
@@ -134,7 +138,7 @@ struct AddFoodView: View {
                     .offset(x: 0, y: 40)
             } //ZStack line 115.
          
-            ZStack{
+           /* ZStack{
                 Rectangle()
                     .foregroundColor(.clear)
                     .frame(width: 393, height: 50)
@@ -155,7 +159,7 @@ struct AddFoodView: View {
                         .frame(width: 15, height: 15)
                         .padding(35)
                 } //HStack line 137.
-            } //ZStack line 130.
+            } //ZStack line 130. */
             
         } //VStack line 5.
         .frame(width: 393, height: 852)
