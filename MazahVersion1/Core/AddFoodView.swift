@@ -7,18 +7,7 @@
 
 import SwiftUI
 
-@MainActor
-final class AddFoodViewModel: ObservableObject {
-    @Published var foodName: String = ""
-    @Published var creationDate = Date()
-    @Published var expirationDate = Date()
-    @Published var remindMe = false
-    @Published var notesVar: String = "" // Add this line
-    
-    func addFood() {
-        // Call your Firestore addFood function here using the provided data
-    }
-}
+
 
 struct AddFoodView: View {
     @StateObject private var viewModel = AddFoodViewModel()
@@ -37,55 +26,17 @@ struct AddFoodView: View {
                 .foregroundColor(Color(red: 0.4, green: 0.4, blue: 0.4))
                 .padding(.top, -100)
             
-            Section(header: Text("Food Details")) {
-                TextField("Food Name", text: $viewModel.foodName)
-                    .font(Font.custom("Inter", size: 19))
-                    .foregroundColor(Color(red: 0.34, green: 0.41, blue: 0.34))
-                
-                Divider()
-                    .background(Color.white)
-                
-                TextField("Notes", text: $viewModel.notesVar)
-                    .font(Font.custom("Inter", size: 19))
-                    .foregroundColor(Color(red: 0.34, green: 0.41, blue: 0.34))
-            }
-            
-            Section(header: Text("Expiration")) {
-                HStack {
-                    Text("Added Date")
-                        .font(Font.custom("Inter", size: 19))
-                        .foregroundColor(Color(red: 0.34, green: 0.41, blue: 0.34))
-                    
-                    DatePicker("", selection: $viewModel.creationDate, displayedComponents: .date)
-                        .labelsHidden()
-                        .datePickerStyle(DefaultDatePickerStyle())
+            Form {
+                Section(header: Text("Food Details")) {
+                    TextField("Food Name", text: $viewModel.foodName)
+                    TextField("Notes", text: $viewModel.notesVar)
                 }
                 
-                Divider()
-                    .background(Color.white)
-                
-                HStack {
-                    Text("Expiration Date")
-                        .font(Font.custom("Inter", size: 19))
-                        .foregroundColor(Color(red: 0.34, green: 0.41, blue: 0.34))
+                Section(header: Text("Expiration")) {
+                    DatePicker("Added Date", selection: $viewModel.creationDate, displayedComponents: .date)
+                    DatePicker("Expiration Date", selection: $viewModel.expirationDate, displayedComponents: .date)
                     
-                    DatePicker("", selection: $viewModel.expirationDate, displayedComponents: .date)
-                        .labelsHidden()
-                        .datePickerStyle(DefaultDatePickerStyle())
-                }
-                
-                HStack {
-                    Text("Remind me when ")
-                        .font(Font.custom("Inter", size: 19))
-                        .foregroundColor(Color(red: 0.34, green: 0.41, blue: 0.34))
-                    
-                    Toggle(isOn: $viewModel.remindMe) {
-                        Image(systemName: viewModel.remindMe ? "checkmark.circle.fill" : "circle")
-                            .resizable()
-                            .frame(width: 25, height: 25)
-                            .foregroundColor(viewModel.remindMe ? .green : .gray)
-                    }
-                    .toggleStyle(SwitchToggleStyle(tint: Color.green))
+                    Toggle("Remind me when", isOn: $viewModel.remindMe)
                 }
             }
             

@@ -9,27 +9,33 @@ import Foundation
 import FirebaseFirestore
 import FirebaseFirestoreSwift
 
-// Define a Food struct to represent the data model
-struct Food: Codable {
-    @DocumentID var id: String? // Automatically generates a unique ID for each document
-    var name: String
-    var creationDate: String
-    var foodType: String
-}
-
-// Initialize Firestore
-let db = Firestore.firestore()
-
-// Define a function to add a food item to Firestore
-func addFood(name: String, creationDate: String, foodType: String) {
-    let newFood = Food(name: name, creationDate: creationDate, foodType: foodType)
+@MainActor
+final class AddFoodViewModel: ObservableObject {
     
-    do {
-        // Add the food item to the "foods" collection
-        _ = try db.collection("foods").addDocument(from: newFood)
-        print("Food item added successfully.")
-    } catch {
-        print("Error adding food item: \(error.localizedDescription)")
+    @Published var foodName: String = ""
+    @Published var creationDate = Date()
+    @Published var expirationDate = Date()
+    @Published var remindMe = false
+    @Published var notesVar: String = ""
+    
+    func addFood() {
+        let newFood = Food(name: foodName, creationDate: creationDate, expDate: expirationDate, foodType: "Type", reminder: remindMe);        FirestoreManager.shared.addFood(newFood)
+    }}
+
+
+struct FirestoreManager {
+    static let shared = FirestoreManager() // Singleton instance
+    
+    private let db = Firestore.firestore()
+    
+    func addFood(_ food: Food) {
+        do {
+            // Add the food item to the "foods" collection
+            _ = try db.collection("foods").addDocument(from: food)
+            print("Food item added successfully.")
+        } catch {
+            print("Error adding food item: \(error.localizedDescription)")
+        }
     }
 }
 
