@@ -11,7 +11,7 @@ struct FoodTrackerView: View {
     var body: some View {
         VStack {
             HStack {
-                Text("Go Back to Foods")
+                Text("Go Back to Foods!")
                     .font(Font.custom("Inter", size: 19))
                     .foregroundColor(Color(red: 0.43, green: 0.51, blue: 0.42))
                     .frame(width: 224, height: 31, alignment: .topLeading)
