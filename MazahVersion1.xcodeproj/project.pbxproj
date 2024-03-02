@@ -44,10 +44,12 @@
 		D283F9952B4367A700F0767E /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D283F9942B4367A700F0767E /* UserManager.swift */; };
 		D28864652B0AA30700D85D4F /* SignInEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28864642B0AA30700D85D4F /* SignInEmailView.swift */; };
 		D288646A2B0AA70F00D85D4F /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28864692B0AA70F00D85D4F /* AuthenticationManager.swift */; };
+		D29488972B93C79A00535608 /* RecentFoodsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29488962B93C79A00535608 /* RecentFoodsView.swift */; };
+		D29488992B93C7C700535608 /* RecentFoodsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29488982B93C7C700535608 /* RecentFoodsViewModel.swift */; };
+		D294889B2B93C80800535608 /* TrackerHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D294889A2B93C80800535608 /* TrackerHomeView.swift */; };
 		D29CD57A2B0A8E0100C68EE3 /* MazahVersion1App.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29CD5792B0A8E0100C68EE3 /* MazahVersion1App.swift */; };
 		D29CD57E2B0A8E0700C68EE3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D29CD57D2B0A8E0700C68EE3 /* Assets.xcassets */; };
 		D29CD5812B0A8E0700C68EE3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D29CD5802B0A8E0700C68EE3 /* Preview Assets.xcassets */; };
-		D2AB73012B81087B0064E409 /* Tracker1View.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2AB73002B81087B0064E409 /* Tracker1View.swift */; };
 		D2AB73032B81098B0064E409 /* FoodTrackerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2AB73022B81098B0064E409 /* FoodTrackerView.swift */; };
 		D2AB73052B810A140064E409 /* AddFoodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2AB73042B810A140064E409 /* AddFoodView.swift */; };
 		D2AB73072B810D330064E409 /* EditFoodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2AB73062B810D330064E409 /* EditFoodView.swift */; };
@@ -70,11 +72,13 @@
 		D283F9942B4367A700F0767E /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		D28864642B0AA30700D85D4F /* SignInEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInEmailView.swift; sourceTree = "<group>"; };
 		D28864692B0AA70F00D85D4F /* AuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
+		D29488962B93C79A00535608 /* RecentFoodsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentFoodsView.swift; sourceTree = "<group>"; };
+		D29488982B93C7C700535608 /* RecentFoodsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentFoodsViewModel.swift; sourceTree = "<group>"; };
+		D294889A2B93C80800535608 /* TrackerHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackerHomeView.swift; sourceTree = "<group>"; };
 		D29CD5762B0A8E0100C68EE3 /* MazahVersion1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MazahVersion1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D29CD5792B0A8E0100C68EE3 /* MazahVersion1App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MazahVersion1App.swift; sourceTree = "<group>"; };
 		D29CD57D2B0A8E0700C68EE3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D29CD5802B0A8E0700C68EE3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		D2AB73002B81087B0064E409 /* Tracker1View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tracker1View.swift; sourceTree = "<group>"; };
 		D2AB73022B81098B0064E409 /* FoodTrackerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodTrackerView.swift; sourceTree = "<group>"; };
 		D2AB73042B810A140064E409 /* AddFoodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFoodView.swift; sourceTree = "<group>"; };
 		D2AB73062B810D330064E409 /* EditFoodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditFoodView.swift; sourceTree = "<group>"; };
@@ -226,11 +230,13 @@
 		D2AB72FF2B8108540064E409 /* Tracker */ = {
 			isa = PBXGroup;
 			children = (
-				D2AB73002B81087B0064E409 /* Tracker1View.swift */,
 				D2AB73022B81098B0064E409 /* FoodTrackerView.swift */,
 				D2AB73042B810A140064E409 /* AddFoodView.swift */,
 				D2AB73062B810D330064E409 /* EditFoodView.swift */,
 				F2D9C5CE2B83E759001C6DCA /* TrackerViewModel.swift */,
+				D29488962B93C79A00535608 /* RecentFoodsView.swift */,
+				D294889A2B93C80800535608 /* TrackerHomeView.swift */,
+				D29488982B93C7C700535608 /* RecentFoodsViewModel.swift */,
 			);
 			name = Tracker;
 			sourceTree = "<group>";
@@ -359,7 +365,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D2AB73012B81087B0064E409 /* Tracker1View.swift in Sources */,
 				D20D0CB42B0E7C2700DC1109 /* SettingsView.swift in Sources */,
 				D228ABA02B17FB990034E574 /* ProfileView.swift in Sources */,
 				D29CD57A2B0A8E0100C68EE3 /* MazahVersion1App.swift in Sources */,
@@ -367,15 +372,18 @@
 				D2AB73052B810A140064E409 /* AddFoodView.swift in Sources */,
 				D2AB73072B810D330064E409 /* EditFoodView.swift in Sources */,
 				D2AB73032B81098B0064E409 /* FoodTrackerView.swift in Sources */,
+				D29488972B93C79A00535608 /* RecentFoodsView.swift in Sources */,
 				D20D0CB22B0E797C00DC1109 /* RootView.swift in Sources */,
 				D25D64912B0A9EC50014D33C /* AuthenticationView.swift in Sources */,
 				D283F9952B4367A700F0767E /* UserManager.swift in Sources */,
 				F2D9C5CF2B83E759001C6DCA /* TrackerViewModel.swift in Sources */,
+				D294889B2B93C80800535608 /* TrackerHomeView.swift in Sources */,
 				D2F4ABBF2B39E76900494F89 /* AuthenticationViewModel.swift in Sources */,
 				D2F4ABC32B39E85F00494F89 /* SignInEmailViewModel.swift in Sources */,
 				D288646A2B0AA70F00D85D4F /* AuthenticationManager.swift in Sources */,
 				D228ABA22B17FE460034E574 /* FirstView.swift in Sources */,
 				F2F4B1642B8298C300CA84D9 /* TrackerManager.swift in Sources */,
+				D29488992B93C7C700535608 /* RecentFoodsViewModel.swift in Sources */,
 				D28864652B0AA30700D85D4F /* SignInEmailView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

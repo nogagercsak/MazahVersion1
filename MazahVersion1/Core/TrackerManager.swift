@@ -6,36 +6,55 @@
 //
 
 import Foundation
+import Combine
 import FirebaseFirestore
 import FirebaseFirestoreSwift
 
-@MainActor
 final class AddFoodViewModel: ObservableObject {
-    
     @Published var foodName: String = ""
     @Published var creationDate = Date()
     @Published var expirationDate = Date()
     @Published var remindMe = false
     @Published var notesVar: String = ""
     
-    func addFood() {
-        let newFood = Food(name: foodName, creationDate: creationDate, expDate: expirationDate, foodType: "Type", reminder: remindMe);        FirestoreManager.shared.addFood(newFood)
-    }}
-
-
-struct FirestoreManager {
-    static let shared = FirestoreManager() // Singleton instance
+    private var cancellables = Set<AnyCancellable>()
     
-    private let db = Firestore.firestore()
+    var addedFood = PassthroughSubject<Food, Never>()
     
-    func addFood(_ food: Food) {
-        do {
-            // Add the food item to the "foods" collection
-            _ = try db.collection("foods").addDocument(from: food)
-            print("Food item added successfully.")
-        } catch {
-            print("Error adding food item: \(error.localizedDescription)")
+    func addFood(forUser userId: String) {
+        let newFood = Food(name: foodName, creationDate: creationDate, expDate: expirationDate, foodType: "Type", reminder: remindMe)
+        FirestoreManager.shared.addFood(forUser: userId, newFood) { [weak self] result in
+            switch result {
+            case .success(let food):
+                self?.addedFood.send(food)
+            case .failure(let error):
+                print("Error adding food item: \(error.localizedDescription)")
+            }
         }
     }
 }
 
+
+enum FirestoreError: Error {
+    case documentCreationError
+}
+
+class FirestoreManager {
+    static let shared = FirestoreManager() // Singleton instance
+    private let db = Firestore.firestore()
+    
+    func addFood(forUser userId: String, _ food: Food, completion: @escaping (Result<Food, Error>) -> Void) {
+        do {
+            // Add the food item to the "foods" subcollection of the user
+            _ = try db.collection("users").document(userId).collection("foods").addDocument(from: food) { error in
+                if let error = error {
+                    completion(.failure(error))
+                } else {
+                    completion(.success(food))
+                }
+            }
+        } catch {
+            completion(.failure(FirestoreError.documentCreationError))
+        }
+    }
+}

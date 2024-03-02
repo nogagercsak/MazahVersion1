@@ -120,6 +120,15 @@ struct ProfileView: View {
                 }
             }
         }
+        .toolbar{
+            ToolbarItem(placement: .navigationBarTrailing){
+                NavigationLink {
+                    TrackerHomeView()
+                } label: {
+                    Text("Tracker")
+                }
+            }
+        }
     }
 }
 

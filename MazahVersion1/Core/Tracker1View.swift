@@ -11,7 +11,7 @@ struct FoodItem: Identifiable {
     var name: String
     var addedDate: String
 }
-struct Tracker1View: View {
+struct FoodsView: View {
     let foods: [FoodItem] = [
         FoodItem(name: "Watermelon", addedDate: "11/1"),
         FoodItem(name: "Apple", addedDate: "11/2"),
@@ -46,10 +46,10 @@ struct FoodItemRow: View {
         .padding(.vertical, 10)
     }
 }
-// Preview
+
 struct Tracker1View_Previews: PreviewProvider {
     static var previews: some View {
-        Tracker1View()
+        FoodsView()
     }
 }
 

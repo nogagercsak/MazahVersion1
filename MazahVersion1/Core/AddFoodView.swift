@@ -6,10 +6,11 @@
 //
 
 import SwiftUI
-
+import FirebaseAuth
 
 
 struct AddFoodView: View {
+    
     @StateObject private var viewModel = AddFoodViewModel()
     @Binding var showAddFoodView: Bool
     
@@ -26,22 +27,30 @@ struct AddFoodView: View {
                 .foregroundColor(Color(red: 0.4, green: 0.4, blue: 0.4))
                 .padding(.top, -100)
             
-            Form {
-                Section(header: Text("Food Details")) {
-                    TextField("Food Name", text: $viewModel.foodName)
-                    TextField("Notes", text: $viewModel.notesVar)
-                }
-                
-                Section(header: Text("Expiration")) {
-                    DatePicker("Added Date", selection: $viewModel.creationDate, displayedComponents: .date)
-                    DatePicker("Expiration Date", selection: $viewModel.expirationDate, displayedComponents: .date)
+            ScrollView {
+                VStack {
+                    Section(header: Text("Food Details")) {
+                        TextField("Food Name", text: $viewModel.foodName)
+                        TextField("Notes", text: $viewModel.notesVar)
+                    }
                     
-                    Toggle("Remind me when", isOn: $viewModel.remindMe)
+                    Section(header: Text("Expiration")) {
+                        DatePicker("Added Date", selection: $viewModel.creationDate, displayedComponents: .date)
+                        DatePicker("Expiration Date", selection: $viewModel.expirationDate, displayedComponents: .date)
+                        
+                        Toggle("Remind me when", isOn: $viewModel.remindMe)
+                    }
                 }
+                .padding()
+                .padding(.top, 100)
             }
             
             Button(action: {
-                viewModel.addFood()
+                guard let userId = Auth.auth().currentUser?.uid else {
+                    // Handle error: User is not logged in
+                    return
+                }
+                viewModel.addFood(forUser: userId)
                 showAddFoodView = false
             }) {
                 Text("Save")
@@ -50,14 +59,19 @@ struct AddFoodView: View {
                     .frame(width: 112.73684, height: 40, alignment: .center)
                     .background(Color(red: 0.43, green: 0.51, blue: 0.42))
                     .cornerRadius(30)
-                    .padding(.top, 40)
+                    .padding(.bottom, 90)
             }
         }
         .padding(30)
         .frame(width: 393, height: 852)
         .background(Color(red: 1, green: 0.96, blue: 0.89))
+        .onReceive(viewModel.addedFood) { food in
+            // This closure will be called when a new food item is added to Firestore
+            print("Added Food: \(food.name)")
+        }
     }
 }
+
 
 struct AddFoodView_Previews: PreviewProvider {
     static var previews: some View {
