@@ -55,6 +55,8 @@ final class ProfileViewModel: ObservableObject{
     
 }
 
+import SwiftUI
+
 struct ProfileView: View {
     
     @StateObject private var viewModel = ProfileViewModel()
@@ -67,67 +69,54 @@ struct ProfileView: View {
     }
     
     var body: some View {
-        List{
-            if let user = viewModel.user{
-                Text("UserId: \(user.userId)")
-                
-                if let email = user.email{
-                    Text("Email: \(email.description)")
-                }
-                VStack{
-                    HStack{
-                        ForEach(foodOptions, id:  \.self) { string in
-                            Button(string){
-                                if foodIsSelected(text: string){
-                                    viewModel.removeUserFood(text: string)
-                                } else {
+        VStack{
+            List{
+                if let user = viewModel.user{
+                    Text("UserId: \(user.userId)")
+                    
+                    if let email = user.email{
+                        Text("Email: \(email.description)")
+                    }
+                    VStack{
+                        HStack{
+                            ForEach(foodOptions, id:  \.self) { string in
+                                Button(string){
+                                    if foodIsSelected(text: string){
+                                        viewModel.removeUserFood(text: string)
+                                    } else {
+                                        viewModel.addUserFood(text: string)
+                                    }
                                     viewModel.addUserFood(text: string)
                                 }
-                                viewModel.addUserFood(text: string)
+                                .font(.headline)
+                                .buttonStyle(.borderedProminent)
+                                .tint(foodIsSelected(text: string) ?.green : .red)
                             }
-                            .font(.headline)
-                            .buttonStyle(.borderedProminent)
-                            .tint(foodIsSelected(text: string) ?.green : .red)
                         }
+                        
+                        Text("Foods: \((user.food ?? []).joined(separator: ", "))")
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                    }
+                    Button {
+                        if user.favVegetable == nil {
+                            viewModel.addFavVegetable()
+                        } else {
+                            viewModel.removeFavVegetable()
+                        }
+                    } label: {
+                        Text("Favorite Vegetable: \((user.favVegetable?.title ?? ""))")
                     }
                     
-                    Text("Foods: \((user.food ?? []).joined(separator: ", "))")
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                }
-                Button {
-                    if user.favVegetable == nil {
-                        viewModel.addFavVegetable()
-                    } else {
-                        viewModel.removeFavVegetable()
-                    }
-                } label: {
-                    Text("Favorite Vegetable: \((user.favVegetable?.title ?? ""))")
-                }
-                
-            }
-        }
-        .task{
-            try? await viewModel.loadCurrentUser()
-        }
-        .navigationTitle("Profile")
-        .toolbar{
-            ToolbarItem(placement: .navigationBarTrailing){
-                NavigationLink {
-                    SettingsView(showSignInView: $showSignInView)
-                } label: {
-                    Image(systemName: "gear")
-                        .font(.headline)
                 }
             }
-        }
-        .toolbar{
-            ToolbarItem(placement: .navigationBarTrailing){
-                NavigationLink {
-                    TrackerHomeView()
-                } label: {
-                    Text("Tracker")
-                }
+            .task{
+                try? await viewModel.loadCurrentUser()
             }
+            .navigationTitle("Profile")
+            
+            Spacer() 
+            
+            NavBar(showSignInView: $showSignInView)
         }
     }
 }

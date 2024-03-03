@@ -8,7 +8,10 @@
 import SwiftUI
 
 struct TrackerHomeView: View {
+    
     @StateObject var recentFoodsViewModel = RecentFoodsViewModel()
+    @Binding var showSignInView: Bool
+
     
     var body: some View {
         NavigationView {
@@ -19,6 +22,8 @@ struct TrackerHomeView: View {
                 RecentFoodsView(viewModel: recentFoodsViewModel)
                     .padding()
                 Spacer()
+                
+                NavBar(showSignInView: $showSignInView)
             }
             .navigationTitle("My Foods")
         }
@@ -27,6 +32,6 @@ struct TrackerHomeView: View {
 
 struct TrackerHomeView_Previews: PreviewProvider {
     static var previews: some View {
-        TrackerHomeView()
+        TrackerHomeView(showSignInView: .constant(true))
     }
 }

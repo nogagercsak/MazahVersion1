@@ -13,35 +13,41 @@ struct SettingsView: View {
     @Binding  var showSignInView: Bool
     
     var body: some View {
-        List{
-            Button("Log out"){
-                Task{
-                    do{
-                        try viewModel.signOut()
-                        showSignInView = true
-                    } catch {
-                        print(error)
+        VStack {
+            List{
+                Button("Log out"){
+                    Task{
+                        do{
+                            try viewModel.signOut()
+                            showSignInView = true
+                        } catch {
+                            print(error)
+                        }
                     }
                 }
-            }
-            
-            Button(role: .destructive){
-                Task{
-                    do{
-                        try await viewModel.deleteAccount()
-                        showSignInView = true
-                    } catch {
-                        print(error)
+                
+                Button(role: .destructive){
+                    Task{
+                        do{
+                            try await viewModel.deleteAccount()
+                            showSignInView = true
+                        } catch {
+                            print(error)
+                        }
                     }
+                } label: {
+                    Text("Delete account")
                 }
-            } label: {
-                Text("Delete account")
+                
+                emailSection
+                
             }
+            .navigationTitle("Settings")
             
-            emailSection
+            Spacer()
             
+            NavBar(showSignInView: $showSignInView)
         }
-        .navigationTitle("Settings")
     }
 }
 
