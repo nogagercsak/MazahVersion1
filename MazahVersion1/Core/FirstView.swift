@@ -64,8 +64,7 @@ struct FirstView: View {
                 }
             } else {
                 // Show something else if it's not the first launch
-                Text("Not first launch, show something else here")
-                    .font(.title)
+                RootView()
             }
         }
         .onAppear {
