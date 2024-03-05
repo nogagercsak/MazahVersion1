@@ -16,7 +16,7 @@ struct TrackerHomeView: View {
     var body: some View {
         NavigationView {
             VStack {
-                NavigationLink(destination: AddFoodView(showAddFoodView: .constant(true))) {
+                NavigationLink(destination: AddFoodView(showAddFoodView: .constant(true), showSignInView: $showSignInView)) {
                     Text("Add Food")
                 }
                 RecentFoodsView(viewModel: recentFoodsViewModel)
