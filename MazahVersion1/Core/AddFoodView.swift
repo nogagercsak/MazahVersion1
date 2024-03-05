@@ -7,12 +7,14 @@
 
 import SwiftUI
 import FirebaseAuth
-
+import UserNotifications
 
 struct AddFoodView: View {
     
     @StateObject private var viewModel = AddFoodViewModel()
     @Binding var showAddFoodView: Bool
+    @State private var reminderDate: Date = Date()
+    @State private var isReminderSet: Bool = false
     
     var body: some View {
         VStack {
@@ -38,7 +40,11 @@ struct AddFoodView: View {
                         DatePicker("Added Date", selection: $viewModel.creationDate, displayedComponents: .date)
                         DatePicker("Expiration Date", selection: $viewModel.expirationDate, displayedComponents: .date)
                         
-                        Toggle("Remind me when", isOn: $viewModel.remindMe)
+                        Toggle("Remind me", isOn: $isReminderSet)
+                        
+                        if isReminderSet {
+                            DatePicker("Remind me on", selection: $reminderDate, displayedComponents: .date)
+                        }
                     }
                 }
                 .padding()
@@ -52,6 +58,9 @@ struct AddFoodView: View {
                 }
                 viewModel.addFood(forUser: userId)
                 showAddFoodView = false
+                if isReminderSet {
+                    scheduleReminder()
+                }
             }) {
                 Text("Save")
                     .font(Font.custom("Radio Canada", size: 24))
@@ -70,11 +79,45 @@ struct AddFoodView: View {
             print("Added Food: \(food.name)")
         }
     }
+    
+    // Function to schedule reminder
+    func scheduleReminder() {
+        let content = UNMutableNotificationContent()
+        content.title = "Food Expiration Reminder"
+        content.body = "Don't forget to check the expiration of your food!"
+        content.sound = UNNotificationSound.default
+        
+        // Set the reminder date
+        let calendar = Calendar.current
+        let components = calendar.dateComponents([.year, .month, .day], from: reminderDate)
+        
+        var dateComponents = DateComponents()
+        dateComponents.year = components.year
+        dateComponents.month = components.month
+        dateComponents.day = components.day
+        
+        // Create the trigger based on the chosen date
+        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
+        
+        // Create a unique identifier for the reminder
+        let identifier = UUID().uuidString
+        
+        let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
+        
+        // Add the reminder to the notification center
+        UNUserNotificationCenter.current().add(request) { (error) in
+            if let error = error {
+                print("Error scheduling reminder: \(error.localizedDescription)")
+            } else {
+                print("Reminder scheduled successfully!")
+            }
+        }
+    }
 }
-
 
 struct AddFoodView_Previews: PreviewProvider {
     static var previews: some View {
         AddFoodView(showAddFoodView: .constant(true))
     }
 }
+
