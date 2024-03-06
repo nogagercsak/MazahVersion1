@@ -51,6 +51,7 @@
 		D29CD57A2B0A8E0100C68EE3 /* MazahVersion1App.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29CD5792B0A8E0100C68EE3 /* MazahVersion1App.swift */; };
 		D29CD57E2B0A8E0700C68EE3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D29CD57D2B0A8E0700C68EE3 /* Assets.xcassets */; };
 		D29CD5812B0A8E0700C68EE3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D29CD5802B0A8E0700C68EE3 /* Preview Assets.xcassets */; };
+		D29E66F02B97FE940053833A /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29E66EF2B97FE940053833A /* HomeView.swift */; };
 		D2AB73032B81098B0064E409 /* FoodTrackerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2AB73022B81098B0064E409 /* FoodTrackerView.swift */; };
 		D2AB73052B810A140064E409 /* AddFoodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2AB73042B810A140064E409 /* AddFoodView.swift */; };
 		D2AB73072B810D330064E409 /* EditFoodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2AB73062B810D330064E409 /* EditFoodView.swift */; };
@@ -81,6 +82,7 @@
 		D29CD5792B0A8E0100C68EE3 /* MazahVersion1App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MazahVersion1App.swift; sourceTree = "<group>"; };
 		D29CD57D2B0A8E0700C68EE3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D29CD5802B0A8E0700C68EE3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		D29E66EF2B97FE940053833A /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		D2AB73022B81098B0064E409 /* FoodTrackerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodTrackerView.swift; sourceTree = "<group>"; };
 		D2AB73042B810A140064E409 /* AddFoodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFoodView.swift; sourceTree = "<group>"; };
 		D2AB73062B810D330064E409 /* EditFoodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditFoodView.swift; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				D20D0CB12B0E797C00DC1109 /* RootView.swift */,
+				D29E66EF2B97FE940053833A /* HomeView.swift */,
 				D228ABA12B17FE460034E574 /* FirstView.swift */,
 				D2178DDB2B942CFC0049124C /* NavBar.swift */,
 				D2AB72FF2B8108540064E409 /* Tracker */,
@@ -373,6 +376,7 @@
 				D29CD57A2B0A8E0100C68EE3 /* MazahVersion1App.swift in Sources */,
 				D228AB9A2B17FAC60034E574 /* SettingViewModel.swift in Sources */,
 				D2AB73052B810A140064E409 /* AddFoodView.swift in Sources */,
+				D29E66F02B97FE940053833A /* HomeView.swift in Sources */,
 				D2AB73072B810D330064E409 /* EditFoodView.swift in Sources */,
 				D2AB73032B81098B0064E409 /* FoodTrackerView.swift in Sources */,
 				D29488972B93C79A00535608 /* RecentFoodsView.swift in Sources */,

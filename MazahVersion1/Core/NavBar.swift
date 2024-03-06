@@ -12,7 +12,18 @@ struct NavBar: View {
     @Binding var showSignInView: Bool
 
     var body: some View {
-        HStack(spacing: 40) { // Adjust spacing between buttons here
+        HStack(spacing: 20) {
+            
+            NavigationLink(destination: HomeView(showSignInView: $showSignInView)
+                            .navigationBarBackButtonHidden(true)) {
+                Image(systemName: "house")
+                    .font(.title)
+            }
+            .padding(.leading, 20)
+                        
+                        Spacer()
+            
+            
             NavigationLink(destination: ProfileView(showSignInView: $showSignInView)
                             .navigationBarBackButtonHidden(true)) {
                 Image(systemName: "person.crop.circle")

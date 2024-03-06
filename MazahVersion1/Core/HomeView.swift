@@ -8,11 +8,56 @@
 import SwiftUI
 
 struct HomeView: View {
+    
+    @Binding var showSignInView: Bool
+
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
+            NavigationView {
+                VStack {
+                    Text("Welcome to Mazah!")
+                        .font(.title)
+                        .padding()
+                    
+                    Spacer()
+                    
+                    NavigationLink(destination: TrackerHomeView( showSignInView: $showSignInView)) {
+                        Text("Food Tracker")
+                            .font(.headline)
+                            .padding()
+                            .background(Color.blue)
+                            .foregroundColor(.white)
+                            .cornerRadius(8)
+                    }
+                    
+                  //  NavigationLink(destination: ()) { // here we add reciped view
+                        Text("Recipes")
+                            .font(.headline)
+                            .padding()
+                            .background(Color.orange)
+                            .foregroundColor(.white)
+                            .cornerRadius(8)
+               //     }
+                    
+              //      NavigationLink(destination:()) { //here we add donate view
+                        Text("Donate")
+                            .font(.headline)
+                            .padding()
+                            .background(Color.green)
+                            .foregroundColor(.white)
+                            .cornerRadius(8)
+             //       }
+                    
+                    Spacer()
+                    
+                    NavBar(showSignInView: $showSignInView)
+                }
+                .navigationBarTitle("Home", displayMode: .inline)
+            }
+        
+        }
 }
 
 #Preview {
-    HomeView()
+    HomeView(showSignInView: .constant(false))
 }
