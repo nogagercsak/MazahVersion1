@@ -51,3 +51,5 @@ struct RecentFoodsView: View {
         return formatter.string(from: date)
     }
 }
+
+

@@ -45,7 +45,6 @@ class FirestoreManager {
     
     func addFood(forUser userId: String, _ food: Food, completion: @escaping (Result<Food, Error>) -> Void) {
         do {
-            // Add the food item to the "foods" subcollection of the user
             _ = try db.collection("users").document(userId).collection("foods").addDocument(from: food) { error in
                 if let error = error {
                     completion(.failure(error))
@@ -57,4 +56,15 @@ class FirestoreManager {
             completion(.failure(FirestoreError.documentCreationError))
         }
     }
+    
+    func deleteFood(forUser userId: String, foodId: String, completion: @escaping (Error?) -> Void) {
+        db.collection("users").document(userId).collection("foods").document(foodId).delete { error in
+            if let error = error {
+                completion(error)
+            } else {
+                completion(nil)
+            }
+        }
+    }
 }
+

@@ -48,4 +48,20 @@ class RecentFoodsViewModel: ObservableObject {
                 }
             }
     }
-}
+    
+    func deleteFood(food: Food) {
+           guard let userId = Auth.auth().currentUser?.uid, let foodId = food.id else {
+               return
+           }
+           
+           FirestoreManager.shared.deleteFood(forUser: userId, foodId: foodId) { error in
+               if let error = error {
+                   print("Error deleting food: \(error.localizedDescription)")
+               } else {
+                   print("Food deleted successfully!")
+                   // Handle any updates after deletion, like fetching updated list
+               }
+           }
+       }
+   }
+

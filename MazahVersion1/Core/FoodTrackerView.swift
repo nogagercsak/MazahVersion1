@@ -6,9 +6,13 @@
 //
 
 import SwiftUI
+import FirebaseAuth
 
 struct FoodTrackerView: View {
+    
     var food: Food
+    @State private var isDeleteAlertPresented = false
+        
     
     var body: some View {
         ScrollView {
@@ -53,14 +57,47 @@ struct FoodTrackerView: View {
                         .padding(.vertical, 20)
                 }
                 
-                Spacer()
-                
-                TabBar()
-            }
-            .padding()
-            .navigationTitle("Food Details")
-        }
-    }
+                Button(action: {
+                                    isDeleteAlertPresented = true
+                                }) {
+                                    Text("Delete")
+                                        // Button styling...
+                                }
+                                .alert(isPresented: $isDeleteAlertPresented) {
+                                    Alert(
+                                        title: Text("Delete Food"),
+                                        message: Text("Are you sure you want to delete this food?"),
+                                        primaryButton: .destructive(Text("Delete")) {
+                                            deleteFood()
+                                        },
+                                        secondaryButton: .cancel()
+                                    )
+                                }
+                                
+                                Spacer()
+                                
+                                TabBar()
+                            }
+                            .padding()
+                            .navigationTitle("Food Details")
+                        }
+                    }
+                    
+                    private func deleteFood() {
+                        guard let userId = Auth.auth().currentUser?.uid, let foodId = food.id else {
+                            return
+                        }
+                        
+                        FirestoreManager.shared.deleteFood(forUser: userId, foodId: foodId) { error in
+                            if let error = error {
+                                print("Error deleting food: \(error.localizedDescription)")
+                            } else {
+                                print("Food deleted successfully!")
+                                // Handle navigation or other updates after deletion
+                            }
+                        }
+                    }
+                }
     
     private func formattedDate(_ date: Date) -> String {
         let formatter = DateFormatter()
@@ -68,7 +105,7 @@ struct FoodTrackerView: View {
         formatter.timeStyle = .none
         return formatter.string(from: date)
     }
-}
+
 
 struct FoodTrackerView_Previews: PreviewProvider {
     static var previews: some View {
