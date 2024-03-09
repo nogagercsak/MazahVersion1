@@ -21,16 +21,10 @@ struct AddFoodView: View {
     var body: some View {
         NavigationView {
             VStack {
-                Text("< Go back to Foods")
-                    .font(Font.custom("Inter", size: 19))
-                    .foregroundColor(Color(red: 0.45, green: 0.68, blue: 0))
-                    .frame(width: 224, height: 31, alignment: .topLeading)
-                    .padding(.top, -170)
                 
                 Text("Food!")
                     .font(Font.custom("Radio Canada", size: 45))
-                    .foregroundColor(Color(red: 0.4, green: 0.4, blue: 0.4))
-                    .padding(.top, -100)
+                    .padding(.top, 100)
                 
                 ScrollView {
                     VStack {
