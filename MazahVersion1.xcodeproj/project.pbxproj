@@ -57,6 +57,7 @@
 		D2AB73072B810D330064E409 /* EditFoodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2AB73062B810D330064E409 /* EditFoodView.swift */; };
 		D2F4ABBF2B39E76900494F89 /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F4ABBE2B39E76900494F89 /* AuthenticationViewModel.swift */; };
 		D2F4ABC32B39E85F00494F89 /* SignInEmailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F4ABC22B39E85F00494F89 /* SignInEmailViewModel.swift */; };
+		F287B8752BA2419D00BFDBF7 /* AllRecentFoodsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F287B8742BA2419D00BFDBF7 /* AllRecentFoodsView.swift */; };
 		F2D9C5CF2B83E759001C6DCA /* TrackerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D9C5CE2B83E759001C6DCA /* TrackerViewModel.swift */; };
 		F2F4B1642B8298C300CA84D9 /* TrackerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F4B1632B8298C300CA84D9 /* TrackerManager.swift */; };
 		F440F6632B443DAC00EC7F1C /* SeoulHangang.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F440F6622B443DAC00EC7F1C /* SeoulHangang.ttf */; };
@@ -88,6 +89,7 @@
 		D2AB73062B810D330064E409 /* EditFoodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditFoodView.swift; sourceTree = "<group>"; };
 		D2F4ABBE2B39E76900494F89 /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
 		D2F4ABC22B39E85F00494F89 /* SignInEmailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInEmailViewModel.swift; sourceTree = "<group>"; };
+		F287B8742BA2419D00BFDBF7 /* AllRecentFoodsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllRecentFoodsView.swift; sourceTree = "<group>"; };
 		F2D9C5CE2B83E759001C6DCA /* TrackerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackerViewModel.swift; sourceTree = "<group>"; };
 		F2F4B1632B8298C300CA84D9 /* TrackerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackerManager.swift; sourceTree = "<group>"; };
 		F440F6622B443DAC00EC7F1C /* SeoulHangang.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SeoulHangang.ttf; sourceTree = "<group>"; };
@@ -237,6 +239,7 @@
 			isa = PBXGroup;
 			children = (
 				D2AB73022B81098B0064E409 /* FoodTrackerView.swift */,
+				F287B8742BA2419D00BFDBF7 /* AllRecentFoodsView.swift */,
 				D2AB73042B810A140064E409 /* AddFoodView.swift */,
 				D2AB73062B810D330064E409 /* EditFoodView.swift */,
 				F2D9C5CE2B83E759001C6DCA /* TrackerViewModel.swift */,
@@ -384,6 +387,7 @@
 				D25D64912B0A9EC50014D33C /* AuthenticationView.swift in Sources */,
 				D283F9952B4367A700F0767E /* UserManager.swift in Sources */,
 				D2178DDC2B942CFC0049124C /* NavBar.swift in Sources */,
+				F287B8752BA2419D00BFDBF7 /* AllRecentFoodsView.swift in Sources */,
 				F2D9C5CF2B83E759001C6DCA /* TrackerViewModel.swift in Sources */,
 				D294889B2B93C80800535608 /* TrackerHomeView.swift in Sources */,
 				D2F4ABBF2B39E76900494F89 /* AuthenticationViewModel.swift in Sources */,

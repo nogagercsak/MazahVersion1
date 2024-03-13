@@ -4,16 +4,15 @@
 //
 //  Created by Ishika Meel on 2/18/24.
 //
-
 import Foundation
 import Combine
 import FirebaseFirestore
 import FirebaseFirestoreSwift
-
 final class AddFoodViewModel: ObservableObject {
     @Published var foodName: String = ""
     @Published var creationDate = Date()
     @Published var expirationDate = Date()
+    @Published var foodType: String = ""
     @Published var remindMe = false
     @Published var notesVar: String = ""
     
@@ -21,8 +20,8 @@ final class AddFoodViewModel: ObservableObject {
     
     var addedFood = PassthroughSubject<Food, Never>()
     
-    func addFood(forUser userId: String) {
-        let newFood = Food(name: foodName, creationDate: creationDate, expDate: expirationDate, foodType: "Type", reminder: remindMe)
+    func addFood(forUser userId: String, category: String) {
+        let newFood = Food(name: foodName, creationDate: creationDate, expDate: expirationDate, foodType: foodType, reminder: remindMe, category: category)  // Pass category
         FirestoreManager.shared.addFood(forUser: userId, newFood) { [weak self] result in
             switch result {
             case .success(let food):
@@ -33,19 +32,21 @@ final class AddFoodViewModel: ObservableObject {
         }
     }
 }
-
-
 enum FirestoreError: Error {
     case documentCreationError
 }
-
 class FirestoreManager {
     static let shared = FirestoreManager() // Singleton instance
     private let db = Firestore.firestore()
     
     func addFood(forUser userId: String, _ food: Food, completion: @escaping (Result<Food, Error>) -> Void) {
         do {
-            _ = try db.collection("users").document(userId).collection("foods").addDocument(from: food) { error in
+            // Encode the entire food object
+            let encodedFood = try Firestore.Encoder().encode(food)
+            
+            let foodData = encodedFood as [String: Any]
+            
+            _ = db.collection("users").document(userId).collection("foods").addDocument(data: foodData) { error in
                 if let error = error {
                     completion(.failure(error))
                 } else {
@@ -67,4 +68,3 @@ class FirestoreManager {
         }
     }
 }
-

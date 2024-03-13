@@ -4,11 +4,9 @@
 //
 //  Created by Noga Gercsak on 2/17/24.
 //
-
 import SwiftUI
 import FirebaseAuth
 import UserNotifications
-
 struct AddFoodView: View {
     
     @StateObject private var viewModel = AddFoodViewModel()
@@ -17,11 +15,13 @@ struct AddFoodView: View {
     @State private var reminderDate: Date = Date()
     @State private var isReminderSet: Bool = false
     @State private var navigateToTrackerHome: Bool = false
+    @State private var foodType: String = "Dairy"
+    
+    let foodTypes = ["Dairy", "Produce", "Meat", "Grains", "Beverages"]
     
     var body: some View {
         NavigationView {
             VStack {
-                
                 Text("Food!")
                     .font(Font.custom("Radio Canada", size: 45))
                     .padding(.top, 100)
@@ -36,6 +36,13 @@ struct AddFoodView: View {
                         Section(header: Text("Expiration")) {
                             DatePicker("Added Date", selection: $viewModel.creationDate, displayedComponents: .date)
                             DatePicker("Expiration Date", selection: $viewModel.expirationDate, displayedComponents: .date)
+                            
+                            Picker("Category", selection: $viewModel.foodType) {
+                                ForEach(foodTypes, id: \.self) {
+                                    Text($0)
+                                }
+                            }
+                            .pickerStyle(MenuPickerStyle())
                             
                             Toggle("Remind me", isOn: $isReminderSet)
                             
@@ -53,7 +60,7 @@ struct AddFoodView: View {
                         // Handle error: User is not logged in
                         return
                     }
-                    viewModel.addFood(forUser: userId)
+                    viewModel.addFood(forUser: userId, category: foodType)  // Pass selected category
                     showAddFoodView = false
                     if isReminderSet {
                         scheduleReminder()
@@ -118,11 +125,8 @@ struct AddFoodView: View {
         }
     }
 }
-
 struct AddFoodView_Previews: PreviewProvider {
     static var previews: some View {
         AddFoodView(showAddFoodView: .constant(true), showSignInView: .constant(true))
     }
 }
-
-

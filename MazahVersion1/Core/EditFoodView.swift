@@ -4,9 +4,7 @@
 //
 //  Created by Noga Gercsak on 2/17/24.
 //
-
 import SwiftUI
-
 struct EditFoodView: View {
     
     @State private var foodName: String = ""
@@ -98,8 +96,6 @@ struct EditFoodView: View {
         .background(Color(red: 1, green: 0.96, blue: 0.89))
     }
 }
-
-
 struct EditFoodView_Previews: PreviewProvider {
     static var previews: some View {
         EditFoodView()

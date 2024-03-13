@@ -4,10 +4,8 @@
 //
 //  Created by Noga Gercsak on 2/17/24.
 //
-
 import SwiftUI
 import FirebaseAuth
-
 struct FoodTrackerView: View {
     
     var food: Food
@@ -17,14 +15,6 @@ struct FoodTrackerView: View {
     var body: some View {
         ScrollView {
             VStack {
-                Text("Go Back to Foods!")
-                    .font(Font.custom("Inter", size: 19))
-                    .foregroundColor(Color(red: 0.43, green: 0.51, blue: 0.42))
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding(.top, 20)
-                    .onTapGesture {
-                        // Dismiss the view
-                    }
                 
                 Text(food.name)
                     .font(Font.custom("Inter", size: 48))
@@ -76,7 +66,6 @@ struct FoodTrackerView: View {
                                 
                                 Spacer()
                                 
-                                TabBar()
                             }
                             .padding()
                             .navigationTitle("Food Details")
@@ -105,14 +94,11 @@ struct FoodTrackerView: View {
         formatter.timeStyle = .none
         return formatter.string(from: date)
     }
-
-
 struct FoodTrackerView_Previews: PreviewProvider {
     static var previews: some View {
-        FoodTrackerView(food: Food(id: "1", name: "Watermelon", creationDate: Date(), expDate: Date(), foodType: "Fruit", reminder: false))
+        FoodTrackerView(food: Food(id: "1", name: "Watermelon", creationDate: Date(), expDate: Date(), foodType: "Fruit", reminder: false, category: "Produce"))
     }
 }
-
 struct InfoBox: View {
     var title: String
     var detail: String
@@ -143,30 +129,3 @@ struct InfoBox: View {
         .padding(.horizontal, 10)
     }
 }
-
-struct TabBar: View {
-    var body: some View {
-        HStack {
-            Spacer()
-            
-            Image(systemName: "house")
-                .frame(width: 30, height: 30)
-                .padding(.trailing, 40)
-            
-            Image(systemName: "plus.app")
-                .frame(width: 30, height: 30)
-                .padding(.trailing, 40)
-            
-            Image(systemName: "fork.knife.circle")
-                .frame(width: 30, height: 30)
-                .padding(.trailing, 40)
-            
-            Image(systemName: "person.crop.circle")
-                .frame(width: 30, height: 30)
-                .padding(.trailing, 40)
-            
-        }
-    }
-}
-
-

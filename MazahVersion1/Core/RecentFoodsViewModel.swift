@@ -1,16 +1,15 @@
+
 //
 //  RecentFoodsViewModel.swift
 //  MazahVersion1
 //
 //  Created by Noga Gercsak on 3/2/24.
 //
-
 import Foundation
 import FirebaseFirestore
 import FirebaseFirestoreSwift
 import Combine
 import FirebaseAuth
-
 class RecentFoodsViewModel: ObservableObject {
     @Published var foods: [Food] = []
     
@@ -64,4 +63,3 @@ class RecentFoodsViewModel: ObservableObject {
            }
        }
    }
-
