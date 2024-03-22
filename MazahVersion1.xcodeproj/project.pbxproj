@@ -60,7 +60,6 @@
 		F287B8752BA2419D00BFDBF7 /* AllRecentFoodsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F287B8742BA2419D00BFDBF7 /* AllRecentFoodsView.swift */; };
 		F2D9C5CF2B83E759001C6DCA /* TrackerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D9C5CE2B83E759001C6DCA /* TrackerViewModel.swift */; };
 		F2F4B1642B8298C300CA84D9 /* TrackerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F4B1632B8298C300CA84D9 /* TrackerManager.swift */; };
-		F41E49042BAE36CB0091435B /* SeoulHangang B.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F41E49032BAE36CB0091435B /* SeoulHangang B.ttf */; };
 		F41E490A2BAE456D0091435B /* andale-mono.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F41E49092BAE456D0091435B /* andale-mono.ttf */; };
 		F440F6652B443E2800EC7F1C /* RadioCanada.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F440F6642B443E2800EC7F1C /* RadioCanada.ttf */; };
 /* End PBXBuildFile section */
@@ -93,7 +92,6 @@
 		F287B8742BA2419D00BFDBF7 /* AllRecentFoodsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllRecentFoodsView.swift; sourceTree = "<group>"; };
 		F2D9C5CE2B83E759001C6DCA /* TrackerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackerViewModel.swift; sourceTree = "<group>"; };
 		F2F4B1632B8298C300CA84D9 /* TrackerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackerManager.swift; sourceTree = "<group>"; };
-		F41E49032BAE36CB0091435B /* SeoulHangang B.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SeoulHangang B.ttf"; path = "../../Downloads/SeoulHangang B/SeoulHangang B.ttf"; sourceTree = "<group>"; };
 		F41E49092BAE456D0091435B /* andale-mono.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "andale-mono.ttf"; sourceTree = "<group>"; };
 		F440F6642B443E2800EC7F1C /* RadioCanada.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = RadioCanada.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -200,7 +198,6 @@
 			isa = PBXGroup;
 			children = (
 				F440F6642B443E2800EC7F1C /* RadioCanada.ttf */,
-				F41E49032BAE36CB0091435B /* SeoulHangang B.ttf */,
 				F41E49092BAE456D0091435B /* andale-mono.ttf */,
 				D29CD5782B0A8E0100C68EE3 /* MazahVersion1 */,
 				D29CD5772B0A8E0100C68EE3 /* Products */,
@@ -363,7 +360,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F41E490A2BAE456D0091435B /* andale-mono.ttf in Resources */,
-				F41E49042BAE36CB0091435B /* SeoulHangang B.ttf in Resources */,
 				F440F6652B443E2800EC7F1C /* RadioCanada.ttf in Resources */,
 				D29CD5812B0A8E0700C68EE3 /* Preview Assets.xcassets in Resources */,
 				D29CD57E2B0A8E0700C68EE3 /* Assets.xcassets in Resources */,
