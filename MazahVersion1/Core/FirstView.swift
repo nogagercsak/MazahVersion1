@@ -18,7 +18,7 @@ struct FirstView: View {
                 NavigationView {
                     VStack {
                         Text("Mazah")
-                            .font(.custom("SeH-CB", size: 95))
+                            .font(.custom("SeoulHangang B", size: 95))
                             .multilineTextAlignment(.center)
                             .foregroundColor(Color(red: 0.34, green: 0.41, blue: 0.34))
                             .fontWeight(.bold)
@@ -26,7 +26,7 @@ struct FirstView: View {
                             .offset(x: 0, y: -40)
                         
                         Text("Start your food saving journey today.")
-                            .font(.custom("SeH-CB", size: 22))
+                            .font(.custom("SeoulHangang B", size: 22))
                             .multilineTextAlignment(.center)
                             .foregroundColor(Color(red: 0.34, green: 0.41, blue: 0.34))
                             .frame(width: 237, height: 52, alignment: .center)
@@ -41,7 +41,7 @@ struct FirstView: View {
                                     .cornerRadius(30)
                                 
                                 Text("Start")
-                                    .font(.custom("SeH-CB", size: 25))
+                                    .font(.custom("SeoulHangang B", size: 25))
                                     .multilineTextAlignment(.center)
                                     .foregroundColor(Color(red: 0.98, green: 0.93, blue: 0.66))
                                     .frame(width: 100, height: 35, alignment: .center)

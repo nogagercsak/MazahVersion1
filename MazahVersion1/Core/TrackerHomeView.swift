@@ -12,7 +12,7 @@ struct TrackerHomeView: View {
             VStack(spacing: 20) {
                 // Header
                 Text("Tracker")
-                    .font(.largeTitle)
+                    .font(Font.custom("SeoulHangang B", size: 40))
                     .fontWeight(.bold)
                     .padding(.top, 20)
                 

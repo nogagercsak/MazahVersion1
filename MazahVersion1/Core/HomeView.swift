@@ -16,14 +16,14 @@ struct HomeView: View {
             NavigationView {
                 VStack {
                     Text("Welcome to Mazah!")
-                        .font(.title)
+                        .font(.custom("SeoulHangang B", size: 50))
                         .padding()
                     
                     Spacer()
                     
                     NavigationLink(destination: TrackerHomeView( showSignInView: $showSignInView)) {
                         Text("Food Tracker")
-                            .font(.headline)
+                            .font(Font.custom("Radio Canada", size: 18))
                             .padding()
                             .background(Color.blue)
                             .foregroundColor(.white)
@@ -32,7 +32,7 @@ struct HomeView: View {
                     
                   //  NavigationLink(destination: ()) { // here we add reciped view
                         Text("Recipes")
-                            .font(.headline)
+                            .font(Font.custom("Radio Canada", size: 18))
                             .padding()
                             .background(Color.orange)
                             .foregroundColor(.white)
@@ -41,7 +41,7 @@ struct HomeView: View {
                     
               //      NavigationLink(destination:()) { //here we add donate view
                         Text("Donate")
-                            .font(.headline)
+                            .font(Font.custom("Radio Canada", size: 18))
                             .padding()
                             .background(Color.green)
                             .foregroundColor(.white)
