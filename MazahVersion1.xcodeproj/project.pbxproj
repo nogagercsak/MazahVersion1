@@ -57,12 +57,29 @@
 		D2AB73072B810D330064E409 /* EditFoodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2AB73062B810D330064E409 /* EditFoodView.swift */; };
 		D2F4ABBF2B39E76900494F89 /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F4ABBE2B39E76900494F89 /* AuthenticationViewModel.swift */; };
 		D2F4ABC32B39E85F00494F89 /* SignInEmailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F4ABC22B39E85F00494F89 /* SignInEmailViewModel.swift */; };
+		F2604AE32BAF356900DBE59E /* MapFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2604AE22BAF356900DBE59E /* MapFeature.swift */; };
+		F2604AE62BAF359600DBE59E /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2604AE42BAF359400DBE59E /* MapKit.framework */; };
+		F2604AE72BAF359600DBE59E /* MapKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F2604AE42BAF359400DBE59E /* MapKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F287B8752BA2419D00BFDBF7 /* AllRecentFoodsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F287B8742BA2419D00BFDBF7 /* AllRecentFoodsView.swift */; };
 		F2D9C5CF2B83E759001C6DCA /* TrackerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D9C5CE2B83E759001C6DCA /* TrackerViewModel.swift */; };
 		F2F4B1642B8298C300CA84D9 /* TrackerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F4B1632B8298C300CA84D9 /* TrackerManager.swift */; };
 		F41E490A2BAE456D0091435B /* andale-mono.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F41E49092BAE456D0091435B /* andale-mono.ttf */; };
 		F440F6652B443E2800EC7F1C /* RadioCanada.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F440F6642B443E2800EC7F1C /* RadioCanada.ttf */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		F2604AE82BAF359600DBE59E /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				F2604AE72BAF359600DBE59E /* MapKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		D20D0CB12B0E797C00DC1109 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
@@ -89,6 +106,8 @@
 		D2AB73062B810D330064E409 /* EditFoodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditFoodView.swift; sourceTree = "<group>"; };
 		D2F4ABBE2B39E76900494F89 /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
 		D2F4ABC22B39E85F00494F89 /* SignInEmailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInEmailViewModel.swift; sourceTree = "<group>"; };
+		F2604AE22BAF356900DBE59E /* MapFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapFeature.swift; sourceTree = "<group>"; };
+		F2604AE42BAF359400DBE59E /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		F287B8742BA2419D00BFDBF7 /* AllRecentFoodsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllRecentFoodsView.swift; sourceTree = "<group>"; };
 		F2D9C5CE2B83E759001C6DCA /* TrackerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackerViewModel.swift; sourceTree = "<group>"; };
 		F2F4B1632B8298C300CA84D9 /* TrackerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackerManager.swift; sourceTree = "<group>"; };
@@ -119,6 +138,7 @@
 				D25D64772B0A97BF0014D33C /* FirebaseFunctions in Frameworks */,
 				D25D648D2B0A97BF0014D33C /* FirebaseStorageCombine-Community in Frameworks */,
 				D25D64872B0A97BF0014D33C /* FirebaseRemoteConfig in Frameworks */,
+				F2604AE62BAF359600DBE59E /* MapKit.framework in Frameworks */,
 				D25D64632B0A97BF0014D33C /* FirebaseAppDistribution-Beta in Frameworks */,
 				D25D64672B0A97BF0014D33C /* FirebaseAuthCombine-Community in Frameworks */,
 				D25D64852B0A97BF0014D33C /* FirebasePerformance in Frameworks */,
@@ -137,6 +157,7 @@
 		D228AB962B17FA410034E574 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F2604AE42BAF359400DBE59E /* MapKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -144,6 +165,7 @@
 		D228AB972B17FA940034E574 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				F2604AE12BAF354D00DBE59E /* Map */,
 				D20D0CB12B0E797C00DC1109 /* RootView.swift */,
 				D29E66EF2B97FE940053833A /* HomeView.swift */,
 				D228ABA12B17FE460034E574 /* FirstView.swift */,
@@ -269,6 +291,14 @@
 			name = Subviews;
 			sourceTree = "<group>";
 		};
+		F2604AE12BAF354D00DBE59E /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				F2604AE22BAF356900DBE59E /* MapFeature.swift */,
+			);
+			name = Map;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -279,6 +309,7 @@
 				D29CD5722B0A8E0100C68EE3 /* Sources */,
 				D29CD5732B0A8E0100C68EE3 /* Frameworks */,
 				D29CD5742B0A8E0100C68EE3 /* Resources */,
+				F2604AE82BAF359600DBE59E /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -387,6 +418,7 @@
 				D25D64912B0A9EC50014D33C /* AuthenticationView.swift in Sources */,
 				D283F9952B4367A700F0767E /* UserManager.swift in Sources */,
 				D2178DDC2B942CFC0049124C /* NavBar.swift in Sources */,
+				F2604AE32BAF356900DBE59E /* MapFeature.swift in Sources */,
 				F287B8752BA2419D00BFDBF7 /* AllRecentFoodsView.swift in Sources */,
 				F2D9C5CF2B83E759001C6DCA /* TrackerViewModel.swift in Sources */,
 				D294889B2B93C80800535608 /* TrackerHomeView.swift in Sources */,
