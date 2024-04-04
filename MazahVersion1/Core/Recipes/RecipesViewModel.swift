@@ -10,39 +10,45 @@ import Combine
 import FirebaseFirestore
 
 struct Recipe: Identifiable, Codable {
-    var id: String?
+    @DocumentID var id: String?
     var title: String
     var ingredients: [String]
-    var instructions: String
+    var instructions: [String]
     var category: String
 }
 
 
 class RecipesViewModel: ObservableObject {
     @Published var recipes: [Recipe] = []
+    @Published var filteredRecipes: [Recipe] = []
+    @Published var isLoading = false
+    @Published var errorMessage: String?
 
     private var db = Firestore.firestore()
 
     func fetchRecipes() {
-        db.collection("recipes").getDocuments { snapshot, error in
+        isLoading = true
+        errorMessage = nil
+
+        db.collection("recipes").getDocuments { [weak self] snapshot, error in
+            guard let self = self else { return }
+            
+            defer {
+                DispatchQueue.main.async {
+                    self.isLoading = false
+                }
+            }
+
             if let error = error {
-                print("Error fetching recipes: \(error.localizedDescription)")
+                self.errorMessage = "Error fetching recipes: \(error.localizedDescription)"
+                print(self.errorMessage ?? "Unknown error")
                 return
             }
 
             if let snapshot = snapshot {
                 let recipes = snapshot.documents.compactMap { document -> Recipe? in
                     do {
-                        var recipeData = document.data()
-                        guard let title = recipeData["title"] as? String,
-                              let ingredients = recipeData["ingredients"] as? [String],
-                              let instructions = recipeData["instructions"] as? String,
-                              let category = recipeData["category"] as? String else {
-                            // Missing required fields
-                            return nil
-                        }
-
-                        let recipe = Recipe(title: title, ingredients: ingredients, instructions: instructions, category: category)
+                        let recipe = try document.data(as: Recipe.self)
                         return recipe
                     } catch {
                         print("Error decoding recipe: \(error.localizedDescription)")
@@ -52,9 +58,26 @@ class RecipesViewModel: ObservableObject {
 
                 DispatchQueue.main.async {
                     self.recipes = recipes
+                    self.filteredRecipes = recipes // Update filteredRecipes with all recipes
+                    
+                    // Print fetched recipes to console for debugging
+                    for recipe in recipes {
+                        print("Recipe Title: \(recipe.title)")
+                        print("Category: \(recipe.category)")
+                        print("Ingredients: \(recipe.ingredients)")
+                        print("Instructions: \(recipe.instructions)")
+                        print("----------")
+                    }
                 }
             }
         }
     }
-}
 
+    func filterRecipes(searchText: String) {
+        if searchText.isEmpty {
+            self.filteredRecipes = self.recipes
+        } else {
+            self.filteredRecipes = self.recipes.filter { $0.title.localizedCaseInsensitiveContains(searchText) }
+        }
+    }
+}

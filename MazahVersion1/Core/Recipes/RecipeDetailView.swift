@@ -25,7 +25,9 @@ struct RecipeDetailView: View {
 
                     Text("Instructions:")
                         .font(.headline)
-                    Text(recipe.instructions)
+                    ForEach(recipe.instructions, id: \.self) { instruction in
+                        Text("• \(instruction)")
+                    }
 
                     Spacer()
                 }
@@ -41,7 +43,7 @@ struct RecipeDetailView_Previews: PreviewProvider {
             id: "1",
             title: "Spaghetti Carbonara",
             ingredients: ["Spaghetti", "Eggs", "Parmesan cheese", "Pancetta", "Black pepper", "Salt"],
-            instructions: "1. Cook spaghetti in salted water...", 
+            instructions: ["1. Cook spaghetti in salted water..."],
             category: "pasta"
         )
         return RecipeDetailView(recipe: sampleRecipe)

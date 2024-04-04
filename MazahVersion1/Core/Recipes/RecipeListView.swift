@@ -17,30 +17,40 @@ struct RecipeListView: View {
                 SearchBar(text: $searchText, placeholder: "Search Recipes")
                     .padding(.horizontal)
 
-                List(filteredRecipes) { recipe in
-                    NavigationLink(destination: RecipeDetailView(recipe: recipe)) {
-                        VStack(alignment: .leading) {
-                            Text(recipe.title)
-                                .font(.headline)
-                            Text("Category: \(recipe.category)")
-                                .font(.subheadline)
+                if viewModel.isLoading {
+                    ProgressView()
+                        .progressViewStyle(CircularProgressViewStyle())
+                        .padding()
+                } else if let errorMessage = viewModel.errorMessage {
+                    Text(errorMessage)
+                        .foregroundColor(.red)
+                        .padding()
+                } else {
+                    List(viewModel.filteredRecipes) { recipe in
+                        NavigationLink(destination: RecipeDetailView(recipe: recipe)) {
+                            VStack(alignment: .leading) {
+                                Text(recipe.title)
+                                    .font(.headline)
+                                Text("Category: \(recipe.category)")
+                                    .font(.subheadline)
+                            }
                         }
                     }
+                    .navigationTitle("Recipes")
                 }
-                .navigationTitle("Recipes")
             }
             .onAppear {
                 viewModel.fetchRecipes()
             }
-        }
-    }
-
-    private var filteredRecipes: [Recipe] {
-        if searchText.isEmpty {
-            return viewModel.recipes
-        } else {
-            return viewModel.recipes.filter { $0.title.lowercased().contains(searchText.lowercased()) }
+            .onChange(of: searchText) { newSearchText in
+                viewModel.filterRecipes(searchText: newSearchText)
+            }
         }
     }
 }
 
+struct RecipeListView_Previews: PreviewProvider {
+    static var previews: some View {
+        RecipeListView()
+    }
+}

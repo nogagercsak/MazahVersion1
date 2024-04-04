@@ -26,10 +26,9 @@ final class RecipesManager: ObservableObject {
                     do {
                         var recipeData = document.data()
                         guard let title = recipeData["title"] as? String,
-                              let instructions = recipeData["instructions"] as? String,
+                              let instructions = recipeData["instructions"] as? [String],
                               let category = recipeData["category"] as? String,
                               let ingredients = recipeData["ingredients"] as? [String] else {
-                            // Missing required fields
                             return nil
                         }
 
