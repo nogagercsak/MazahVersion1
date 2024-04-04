@@ -30,14 +30,14 @@ struct HomeView: View {
                             .cornerRadius(8)
                     }
                     
-                  //  NavigationLink(destination: ()) { // here we add reciped view
+                    NavigationLink(destination: RecipeListView()) { // here we add reciped view
                         Text("Recipes")
                             .font(Font.custom("Radio Canada", size: 18))
                             .padding()
                             .background(Color.orange)
                             .foregroundColor(.white)
                             .cornerRadius(8)
-               //     }
+                    }
                     
               //      NavigationLink(destination:()) { //here we add donate view
                         Text("Donate")
