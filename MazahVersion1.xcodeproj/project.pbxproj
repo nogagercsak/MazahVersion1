@@ -66,9 +66,13 @@
 		D2BD20C82BC233BB006DB6DF /* FoodDriveManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BD20C72BC233BB006DB6DF /* FoodDriveManager.swift */; };
 		D2BD20CA2BC238F5006DB6DF /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BD20C92BC238F5006DB6DF /* MapViewController.swift */; };
 		D2BD20CC2BC23967006DB6DF /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BD20CB2BC23967006DB6DF /* MainViewController.swift */; };
+		D2BD20CE2BC23A6B006DB6DF /* FoodDriveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BD20CD2BC23A6B006DB6DF /* FoodDriveView.swift */; };
+		D2BD20D02BC23A91006DB6DF /* FoodDriveRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BD20CF2BC23A91006DB6DF /* FoodDriveRow.swift */; };
+		D2BD20D22BC23AAE006DB6DF /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BD20D12BC23AAE006DB6DF /* MapView.swift */; };
+		D2BD20D42BC23AD6006DB6DF /* FoodDriveViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BD20D32BC23AD6006DB6DF /* FoodDriveViewModel.swift */; };
+		D2BD20D62BC2493D006DB6DF /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BD20D52BC2493D006DB6DF /* MapViewModel.swift */; };
 		D2F4ABBF2B39E76900494F89 /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F4ABBE2B39E76900494F89 /* AuthenticationViewModel.swift */; };
 		D2F4ABC32B39E85F00494F89 /* SignInEmailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F4ABC22B39E85F00494F89 /* SignInEmailViewModel.swift */; };
-		F2604AE32BAF356900DBE59E /* MapFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2604AE22BAF356900DBE59E /* MapFeature.swift */; };
 		F2604AE62BAF359600DBE59E /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2604AE42BAF359400DBE59E /* MapKit.framework */; };
 		F287B8752BA2419D00BFDBF7 /* AllRecentFoodsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F287B8742BA2419D00BFDBF7 /* AllRecentFoodsView.swift */; };
 		F2D9C5CF2B83E759001C6DCA /* TrackerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D9C5CE2B83E759001C6DCA /* TrackerViewModel.swift */; };
@@ -110,9 +114,13 @@
 		D2BD20C72BC233BB006DB6DF /* FoodDriveManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodDriveManager.swift; sourceTree = "<group>"; };
 		D2BD20C92BC238F5006DB6DF /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		D2BD20CB2BC23967006DB6DF /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		D2BD20CD2BC23A6B006DB6DF /* FoodDriveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodDriveView.swift; sourceTree = "<group>"; };
+		D2BD20CF2BC23A91006DB6DF /* FoodDriveRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodDriveRow.swift; sourceTree = "<group>"; };
+		D2BD20D12BC23AAE006DB6DF /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		D2BD20D32BC23AD6006DB6DF /* FoodDriveViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodDriveViewModel.swift; sourceTree = "<group>"; };
+		D2BD20D52BC2493D006DB6DF /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		D2F4ABBE2B39E76900494F89 /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
 		D2F4ABC22B39E85F00494F89 /* SignInEmailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInEmailViewModel.swift; sourceTree = "<group>"; };
-		F2604AE22BAF356900DBE59E /* MapFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapFeature.swift; sourceTree = "<group>"; };
 		F2604AE42BAF359400DBE59E /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		F287B8742BA2419D00BFDBF7 /* AllRecentFoodsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllRecentFoodsView.swift; sourceTree = "<group>"; };
 		F2D9C5CE2B83E759001C6DCA /* TrackerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackerViewModel.swift; sourceTree = "<group>"; };
@@ -222,6 +230,8 @@
 				D283F9942B4367A700F0767E /* UserManager.swift */,
 				F2F4B1632B8298C300CA84D9 /* TrackerManager.swift */,
 				D241B49A2BBED20300846902 /* RecipesManager.swift */,
+				D2BD20C52BC23228006DB6DF /* LocationManager.swift */,
+				D2BD20C72BC233BB006DB6DF /* FoodDriveManager.swift */,
 			);
 			name = Firestore;
 			path = Core;
@@ -315,11 +325,13 @@
 		F2604AE12BAF354D00DBE59E /* Map */ = {
 			isa = PBXGroup;
 			children = (
-				F2604AE22BAF356900DBE59E /* MapFeature.swift */,
-				D2BD20C52BC23228006DB6DF /* LocationManager.swift */,
 				D2BD20C92BC238F5006DB6DF /* MapViewController.swift */,
+				D2BD20D32BC23AD6006DB6DF /* FoodDriveViewModel.swift */,
 				D2BD20CB2BC23967006DB6DF /* MainViewController.swift */,
-				D2BD20C72BC233BB006DB6DF /* FoodDriveManager.swift */,
+				D2BD20CD2BC23A6B006DB6DF /* FoodDriveView.swift */,
+				D2BD20CF2BC23A91006DB6DF /* FoodDriveRow.swift */,
+				D2BD20D12BC23AAE006DB6DF /* MapView.swift */,
+				D2BD20D52BC2493D006DB6DF /* MapViewModel.swift */,
 			);
 			name = Map;
 			sourceTree = "<group>";
@@ -439,17 +451,20 @@
 				D29E66F02B97FE940053833A /* HomeView.swift in Sources */,
 				D2AB73072B810D330064E409 /* EditFoodView.swift in Sources */,
 				D2BD20CC2BC23967006DB6DF /* MainViewController.swift in Sources */,
+				D2BD20D22BC23AAE006DB6DF /* MapView.swift in Sources */,
 				D2BD20C62BC23229006DB6DF /* LocationManager.swift in Sources */,
 				D27124562BBEE8F90027D0BC /* RecipeDetailView.swift in Sources */,
+				D2BD20D62BC2493D006DB6DF /* MapViewModel.swift in Sources */,
 				D241B4992BBED1E500846902 /* RecipesViewModel.swift in Sources */,
 				D2AB73032B81098B0064E409 /* FoodTrackerView.swift in Sources */,
 				D29488972B93C79A00535608 /* RecentFoodsView.swift in Sources */,
 				D20D0CB22B0E797C00DC1109 /* RootView.swift in Sources */,
 				D25D64912B0A9EC50014D33C /* AuthenticationView.swift in Sources */,
+				D2BD20D02BC23A91006DB6DF /* FoodDriveRow.swift in Sources */,
 				D2BD20C82BC233BB006DB6DF /* FoodDriveManager.swift in Sources */,
 				D283F9952B4367A700F0767E /* UserManager.swift in Sources */,
+				D2BD20CE2BC23A6B006DB6DF /* FoodDriveView.swift in Sources */,
 				D2178DDC2B942CFC0049124C /* NavBar.swift in Sources */,
-				F2604AE32BAF356900DBE59E /* MapFeature.swift in Sources */,
 				D241B49D2BBED24000846902 /* RecipeListView.swift in Sources */,
 				F287B8752BA2419D00BFDBF7 /* AllRecentFoodsView.swift in Sources */,
 				D27124582BBF01E60027D0BC /* SearchBar.swift in Sources */,
@@ -463,6 +478,7 @@
 				F2F4B1642B8298C300CA84D9 /* TrackerManager.swift in Sources */,
 				D241B49B2BBED20400846902 /* RecipesManager.swift in Sources */,
 				D218EB772BBF77CF000E0A5D /* SignUpEmailView.swift in Sources */,
+				D2BD20D42BC23AD6006DB6DF /* FoodDriveViewModel.swift in Sources */,
 				D29488992B93C7C700535608 /* RecentFoodsViewModel.swift in Sources */,
 				D28864652B0AA30700D85D4F /* SignInEmailView.swift in Sources */,
 			);
@@ -601,7 +617,7 @@
 				DEVELOPMENT_TEAM = 43R5GX99UB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need your location to find nearby food drives and banks.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Mazah needs your location to find local food drives.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -631,7 +647,7 @@
 				DEVELOPMENT_TEAM = 43R5GX99UB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need your location to find nearby food drives and banks.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Mazah needs your location to find local food drives.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

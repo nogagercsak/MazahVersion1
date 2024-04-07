@@ -9,7 +9,8 @@ import Foundation
 import FirebaseFirestore
 import FirebaseFirestoreSwift
 
-struct FoodDrive {
+struct FoodDrive: Identifiable {
+    let id = UUID()
     let name: String
     let description: String
     let location: GeoPoint
