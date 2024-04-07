@@ -11,15 +11,17 @@ struct FoodDriveRow: View {
     @Binding var foodDrive: FoodDrive
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 8) {
-            Text(foodDrive.name)
-                .font(.headline)
-            
-            Text(foodDrive.address)
-                .font(.subheadline)
-                .foregroundColor(.gray)
+        NavigationLink(destination: FoodDriveDetailView(foodDrive: foodDrive)) {
+            VStack(alignment: .leading, spacing: 8) {
+                Text(foodDrive.name)
+                    .font(.headline)
+                
+                Text(foodDrive.address)
+                    .font(.subheadline)
+                    .foregroundColor(.gray)
+            }
+            .padding()
         }
-        .padding()
     }
 }
 

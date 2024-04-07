@@ -13,53 +13,37 @@ struct GeoPoint {
     var longitude: Double
 }
 
-
-struct MapView: UIViewRepresentable {
+struct MapView: View {
     @StateObject private var viewModel = MapViewModel()
     @Binding var foodDrives: [FoodDrive]
 
-    func makeUIView(context: Context) -> MKMapView {
-        let mapView = MKMapView()
-        mapView.delegate = context.coordinator
-        mapView.setRegion(viewModel.region, animated: true) // Set initial region
-        
-        // Check for location services
-        viewModel.checkIfLocationServicesIsEnabled()
-        
-        return mapView
-    }
-    
-    func updateUIView(_ mapView: MKMapView, context: Context) {
-        mapView.removeAnnotations(mapView.annotations)
-        
-        for foodDrive in foodDrives {
-            let annotation = MKPointAnnotation()
-            annotation.title = foodDrive.name
-            annotation.coordinate = CLLocationCoordinate2D(latitude: foodDrive.location.latitude, longitude: foodDrive.location.longitude)
-            mapView.addAnnotation(annotation)
+    var body: some View {
+        ZStack {
+            Map(coordinateRegion: $viewModel.region, showsUserLocation: true, annotationItems: foodDrives) { foodDrive in
+                MapAnnotation(coordinate: CLLocationCoordinate2D(latitude: foodDrive.location.latitude, longitude: foodDrive.location.longitude)) {
+                    FoodDriveMapAnnotation(foodDrive: foodDrive)
+                }
+            }
+            .ignoresSafeArea(edges: .all)
+        }
+        .onAppear {
+            // Check for location services
+            viewModel.checkIfLocationServicesIsEnabled()
         }
     }
-    
-    func makeCoordinator() -> Coordinator {
-        Coordinator()
-    }
-    
-    class Coordinator: NSObject, MKMapViewDelegate {
-        func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-            guard annotation is MKPointAnnotation else { return nil }
-            
-            let identifier = "foodDriveAnnotation"
-            var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) as? MKMarkerAnnotationView
-            
-            if annotationView == nil {
-                annotationView = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: identifier)
-                annotationView?.canShowCallout = true
-                annotationView?.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
-            } else {
-                annotationView?.annotation = annotation
-            }
-            
-            return annotationView
+}
+
+struct FoodDriveMapAnnotation: View {
+    var foodDrive: FoodDrive
+
+    var body: some View {
+        VStack {
+            Image(systemName: "mappin")
+                .foregroundColor(.green)
+            Text(foodDrive.name)
+                .foregroundColor(.primary)
+                .font(.caption)
+                .fontWeight(.bold)
         }
     }
 }
