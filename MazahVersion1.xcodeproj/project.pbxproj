@@ -62,6 +62,10 @@
 		D2AB73052B810A140064E409 /* AddFoodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2AB73042B810A140064E409 /* AddFoodView.swift */; };
 		D2AB73072B810D330064E409 /* EditFoodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2AB73062B810D330064E409 /* EditFoodView.swift */; };
 		D2BD20C42BC22BC5006DB6DF /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = D2BD20C32BC22BC5006DB6DF /* SDWebImageSwiftUI */; };
+		D2BD20C62BC23229006DB6DF /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BD20C52BC23228006DB6DF /* LocationManager.swift */; };
+		D2BD20C82BC233BB006DB6DF /* FoodDriveManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BD20C72BC233BB006DB6DF /* FoodDriveManager.swift */; };
+		D2BD20CA2BC238F5006DB6DF /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BD20C92BC238F5006DB6DF /* MapViewController.swift */; };
+		D2BD20CC2BC23967006DB6DF /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BD20CB2BC23967006DB6DF /* MainViewController.swift */; };
 		D2F4ABBF2B39E76900494F89 /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F4ABBE2B39E76900494F89 /* AuthenticationViewModel.swift */; };
 		D2F4ABC32B39E85F00494F89 /* SignInEmailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F4ABC22B39E85F00494F89 /* SignInEmailViewModel.swift */; };
 		F2604AE32BAF356900DBE59E /* MapFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2604AE22BAF356900DBE59E /* MapFeature.swift */; };
@@ -102,6 +106,10 @@
 		D2AB73022B81098B0064E409 /* FoodTrackerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodTrackerView.swift; sourceTree = "<group>"; };
 		D2AB73042B810A140064E409 /* AddFoodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFoodView.swift; sourceTree = "<group>"; };
 		D2AB73062B810D330064E409 /* EditFoodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditFoodView.swift; sourceTree = "<group>"; };
+		D2BD20C52BC23228006DB6DF /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		D2BD20C72BC233BB006DB6DF /* FoodDriveManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodDriveManager.swift; sourceTree = "<group>"; };
+		D2BD20C92BC238F5006DB6DF /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		D2BD20CB2BC23967006DB6DF /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		D2F4ABBE2B39E76900494F89 /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
 		D2F4ABC22B39E85F00494F89 /* SignInEmailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInEmailViewModel.swift; sourceTree = "<group>"; };
 		F2604AE22BAF356900DBE59E /* MapFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapFeature.swift; sourceTree = "<group>"; };
@@ -308,6 +316,10 @@
 			isa = PBXGroup;
 			children = (
 				F2604AE22BAF356900DBE59E /* MapFeature.swift */,
+				D2BD20C52BC23228006DB6DF /* LocationManager.swift */,
+				D2BD20C92BC238F5006DB6DF /* MapViewController.swift */,
+				D2BD20CB2BC23967006DB6DF /* MainViewController.swift */,
+				D2BD20C72BC233BB006DB6DF /* FoodDriveManager.swift */,
 			);
 			name = Map;
 			sourceTree = "<group>";
@@ -426,12 +438,15 @@
 				D2AB73052B810A140064E409 /* AddFoodView.swift in Sources */,
 				D29E66F02B97FE940053833A /* HomeView.swift in Sources */,
 				D2AB73072B810D330064E409 /* EditFoodView.swift in Sources */,
+				D2BD20CC2BC23967006DB6DF /* MainViewController.swift in Sources */,
+				D2BD20C62BC23229006DB6DF /* LocationManager.swift in Sources */,
 				D27124562BBEE8F90027D0BC /* RecipeDetailView.swift in Sources */,
 				D241B4992BBED1E500846902 /* RecipesViewModel.swift in Sources */,
 				D2AB73032B81098B0064E409 /* FoodTrackerView.swift in Sources */,
 				D29488972B93C79A00535608 /* RecentFoodsView.swift in Sources */,
 				D20D0CB22B0E797C00DC1109 /* RootView.swift in Sources */,
 				D25D64912B0A9EC50014D33C /* AuthenticationView.swift in Sources */,
+				D2BD20C82BC233BB006DB6DF /* FoodDriveManager.swift in Sources */,
 				D283F9952B4367A700F0767E /* UserManager.swift in Sources */,
 				D2178DDC2B942CFC0049124C /* NavBar.swift in Sources */,
 				F2604AE32BAF356900DBE59E /* MapFeature.swift in Sources */,
@@ -439,6 +454,7 @@
 				F287B8752BA2419D00BFDBF7 /* AllRecentFoodsView.swift in Sources */,
 				D27124582BBF01E60027D0BC /* SearchBar.swift in Sources */,
 				F2D9C5CF2B83E759001C6DCA /* TrackerViewModel.swift in Sources */,
+				D2BD20CA2BC238F5006DB6DF /* MapViewController.swift in Sources */,
 				D294889B2B93C80800535608 /* TrackerHomeView.swift in Sources */,
 				D2F4ABBF2B39E76900494F89 /* AuthenticationViewModel.swift in Sources */,
 				D2F4ABC32B39E85F00494F89 /* SignInEmailViewModel.swift in Sources */,
@@ -585,6 +601,7 @@
 				DEVELOPMENT_TEAM = 43R5GX99UB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need your location to find nearby food drives and banks.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -614,6 +631,7 @@
 				DEVELOPMENT_TEAM = 43R5GX99UB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need your location to find nearby food drives and banks.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
