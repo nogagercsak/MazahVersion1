@@ -18,12 +18,13 @@ struct FirstView: View {
                 NavigationView {
                     VStack {
                         Text("Mazah")
-                            .font(.custom("SeoulHangang B", size: 95))
+                            .font(.custom("andale-mono", size: 95))
                             .multilineTextAlignment(.center)
                             .foregroundColor(Color(red: 0.34, green: 0.41, blue: 0.34))
                             .fontWeight(.bold)
                             .frame(width: 400, height: 76, alignment: .top)
                             .offset(x: 0, y: -40)
+        
                         
                         Text("Start your food saving journey today.")
                             .font(.custom("SeoulHangang B", size: 22))
@@ -51,13 +52,9 @@ struct FirstView: View {
                         
                     }
                     .frame(width: 393, height: 852)
-                    .background(
-                        Image("Gradient")
-                            .resizable()
-                            .aspectRatio(contentMode: .fill)
-                            .frame(width: 393, height: 900)
-                            .clipped()
-                    )
+                    .background(Image("Gradient")
+                        .resizable()
+                        .aspectRatio(contentMode: .fill))
                 }
                 .onAppear {
                     UserDefaults.standard.set(false, forKey: "isFirstLaunch") // Set isFirstLaunch to false after first launch

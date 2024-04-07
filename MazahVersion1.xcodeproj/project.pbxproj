@@ -61,6 +61,7 @@
 		D2AB73032B81098B0064E409 /* FoodTrackerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2AB73022B81098B0064E409 /* FoodTrackerView.swift */; };
 		D2AB73052B810A140064E409 /* AddFoodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2AB73042B810A140064E409 /* AddFoodView.swift */; };
 		D2AB73072B810D330064E409 /* EditFoodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2AB73062B810D330064E409 /* EditFoodView.swift */; };
+		D2BD20C42BC22BC5006DB6DF /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = D2BD20C32BC22BC5006DB6DF /* SDWebImageSwiftUI */; };
 		D2F4ABBF2B39E76900494F89 /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F4ABBE2B39E76900494F89 /* AuthenticationViewModel.swift */; };
 		D2F4ABC32B39E85F00494F89 /* SignInEmailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F4ABC22B39E85F00494F89 /* SignInEmailViewModel.swift */; };
 		F2604AE32BAF356900DBE59E /* MapFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2604AE22BAF356900DBE59E /* MapFeature.swift */; };
@@ -142,6 +143,7 @@
 				D27143132BBE195600F2953B /* FirebaseStorageCombine-Community in Frameworks */,
 				D27142EB2BBE195500F2953B /* FirebaseAuth in Frameworks */,
 				D27142F52BBE195500F2953B /* FirebaseDynamicLinks in Frameworks */,
+				D2BD20C42BC22BC5006DB6DF /* SDWebImageSwiftUI in Frameworks */,
 				D27143072BBE195500F2953B /* FirebaseMessaging in Frameworks */,
 				D27142F72BBE195500F2953B /* FirebaseFirestore in Frameworks */,
 				D271430F2BBE195500F2953B /* FirebaseRemoteConfigSwift in Frameworks */,
@@ -162,12 +164,12 @@
 		D228AB972B17FA940034E574 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				D241B4972BBED1C100846902 /* Recipes */,
-				F2604AE12BAF354D00DBE59E /* Map */,
 				D20D0CB12B0E797C00DC1109 /* RootView.swift */,
 				D29E66EF2B97FE940053833A /* HomeView.swift */,
 				D228ABA12B17FE460034E574 /* FirstView.swift */,
 				D2178DDB2B942CFC0049124C /* NavBar.swift */,
+				D241B4972BBED1C100846902 /* Recipes */,
+				F2604AE12BAF354D00DBE59E /* Map */,
 				D2AB72FF2B8108540064E409 /* Tracker */,
 				D228AB9E2B17FB8A0034E574 /* Profile */,
 				D2F4ABBD2B39E73500494F89 /* Authentication */,
@@ -354,6 +356,7 @@
 				D271430E2BBE195500F2953B /* FirebaseRemoteConfigSwift */,
 				D27143102BBE195500F2953B /* FirebaseStorage */,
 				D27143122BBE195600F2953B /* FirebaseStorageCombine-Community */,
+				D2BD20C32BC22BC5006DB6DF /* SDWebImageSwiftUI */,
 			);
 			productName = MazahVersion1;
 			productReference = D29CD5762B0A8E0100C68EE3 /* MazahVersion1.app */;
@@ -385,6 +388,7 @@
 			mainGroup = D29CD56D2B0A8E0100C68EE3;
 			packageReferences = (
 				D25D64572B0A97BF0014D33C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				D2BD20C22BC22BC5006DB6DF /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
 			);
 			productRefGroup = D29CD5772B0A8E0100C68EE3 /* Products */;
 			projectDirPath = "";
@@ -660,6 +664,14 @@
 				minimumVersion = 10.18.0;
 			};
 		};
+		D2BD20C22BC22BC5006DB6DF /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.2;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -797,6 +809,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = D25D64572B0A97BF0014D33C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = "FirebaseStorageCombine-Community";
+		};
+		D2BD20C32BC22BC5006DB6DF /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D2BD20C22BC22BC5006DB6DF /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
