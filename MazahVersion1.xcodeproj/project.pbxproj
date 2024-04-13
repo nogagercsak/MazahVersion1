@@ -7,11 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D20430642BCB08C1004ABF62 /* FoodDriveManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20430632BCB08C1004ABF62 /* FoodDriveManager.swift */; };
+		D20430662BCB0AAB004ABF62 /* FoodDrivesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20430652BCB0AAB004ABF62 /* FoodDrivesViewModel.swift */; };
+		D20430682BCB1A7F004ABF62 /* FoodDriveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20430672BCB1A7F004ABF62 /* FoodDriveView.swift */; };
+		D204306A2BCB1AC3004ABF62 /* FoodDriveRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20430692BCB1AC3004ABF62 /* FoodDriveRow.swift */; };
+		D204306C2BCB1BBF004ABF62 /* FoodViewDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D204306B2BCB1BBF004ABF62 /* FoodViewDetailView.swift */; };
 		D20D0CB22B0E797C00DC1109 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20D0CB12B0E797C00DC1109 /* RootView.swift */; };
 		D20D0CB42B0E7C2700DC1109 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20D0CB32B0E7C2700DC1109 /* SettingsView.swift */; };
 		D2178DDC2B942CFC0049124C /* NavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2178DDB2B942CFC0049124C /* NavBar.swift */; };
 		D218EB772BBF77CF000E0A5D /* SignUpEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D218EB762BBF77CF000E0A5D /* SignUpEmailView.swift */; };
-		D21916142BC2E185003052B0 /* FoodDriveDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21916132BC2E185003052B0 /* FoodDriveDetailView.swift */; };
 		D228AB9A2B17FAC60034E574 /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D228AB992B17FAC60034E574 /* SettingViewModel.swift */; };
 		D228ABA02B17FB990034E574 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D228AB9F2B17FB990034E574 /* ProfileView.swift */; };
 		D228ABA22B17FE460034E574 /* FirstView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D228ABA12B17FE460034E574 /* FirstView.swift */; };
@@ -63,15 +67,7 @@
 		D2AB73052B810A140064E409 /* AddFoodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2AB73042B810A140064E409 /* AddFoodView.swift */; };
 		D2AB73072B810D330064E409 /* EditFoodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2AB73062B810D330064E409 /* EditFoodView.swift */; };
 		D2BD20C42BC22BC5006DB6DF /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = D2BD20C32BC22BC5006DB6DF /* SDWebImageSwiftUI */; };
-		D2BD20C62BC23229006DB6DF /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BD20C52BC23228006DB6DF /* LocationManager.swift */; };
-		D2BD20C82BC233BB006DB6DF /* FoodDriveManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BD20C72BC233BB006DB6DF /* FoodDriveManager.swift */; };
-		D2BD20CA2BC238F5006DB6DF /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BD20C92BC238F5006DB6DF /* MapViewController.swift */; };
-		D2BD20CC2BC23967006DB6DF /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BD20CB2BC23967006DB6DF /* MainViewController.swift */; };
-		D2BD20CE2BC23A6B006DB6DF /* FoodDriveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BD20CD2BC23A6B006DB6DF /* FoodDriveView.swift */; };
-		D2BD20D02BC23A91006DB6DF /* FoodDriveRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BD20CF2BC23A91006DB6DF /* FoodDriveRow.swift */; };
-		D2BD20D22BC23AAE006DB6DF /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BD20D12BC23AAE006DB6DF /* MapView.swift */; };
-		D2BD20D42BC23AD6006DB6DF /* FoodDriveViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BD20D32BC23AD6006DB6DF /* FoodDriveViewModel.swift */; };
-		D2BD20D62BC2493D006DB6DF /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BD20D52BC2493D006DB6DF /* MapViewModel.swift */; };
+		D2DEE4552BC7687A0015AF89 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2DEE4542BC7687A0015AF89 /* MapView.swift */; };
 		D2F4ABBF2B39E76900494F89 /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F4ABBE2B39E76900494F89 /* AuthenticationViewModel.swift */; };
 		D2F4ABC32B39E85F00494F89 /* SignInEmailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F4ABC22B39E85F00494F89 /* SignInEmailViewModel.swift */; };
 		F2604AE62BAF359600DBE59E /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2604AE42BAF359400DBE59E /* MapKit.framework */; };
@@ -83,11 +79,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D20430632BCB08C1004ABF62 /* FoodDriveManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodDriveManager.swift; sourceTree = "<group>"; };
+		D20430652BCB0AAB004ABF62 /* FoodDrivesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodDrivesViewModel.swift; sourceTree = "<group>"; };
+		D20430672BCB1A7F004ABF62 /* FoodDriveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodDriveView.swift; sourceTree = "<group>"; };
+		D20430692BCB1AC3004ABF62 /* FoodDriveRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodDriveRow.swift; sourceTree = "<group>"; };
+		D204306B2BCB1BBF004ABF62 /* FoodViewDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodViewDetailView.swift; sourceTree = "<group>"; };
 		D20D0CB12B0E797C00DC1109 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		D20D0CB32B0E7C2700DC1109 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		D2178DDB2B942CFC0049124C /* NavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBar.swift; sourceTree = "<group>"; };
 		D218EB762BBF77CF000E0A5D /* SignUpEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpEmailView.swift; sourceTree = "<group>"; };
-		D21916132BC2E185003052B0 /* FoodDriveDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodDriveDetailView.swift; sourceTree = "<group>"; };
 		D228AB992B17FAC60034E574 /* SettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModel.swift; sourceTree = "<group>"; };
 		D228AB9F2B17FB990034E574 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		D228ABA12B17FE460034E574 /* FirstView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstView.swift; sourceTree = "<group>"; };
@@ -112,15 +112,7 @@
 		D2AB73022B81098B0064E409 /* FoodTrackerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodTrackerView.swift; sourceTree = "<group>"; };
 		D2AB73042B810A140064E409 /* AddFoodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFoodView.swift; sourceTree = "<group>"; };
 		D2AB73062B810D330064E409 /* EditFoodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditFoodView.swift; sourceTree = "<group>"; };
-		D2BD20C52BC23228006DB6DF /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
-		D2BD20C72BC233BB006DB6DF /* FoodDriveManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodDriveManager.swift; sourceTree = "<group>"; };
-		D2BD20C92BC238F5006DB6DF /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
-		D2BD20CB2BC23967006DB6DF /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		D2BD20CD2BC23A6B006DB6DF /* FoodDriveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodDriveView.swift; sourceTree = "<group>"; };
-		D2BD20CF2BC23A91006DB6DF /* FoodDriveRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodDriveRow.swift; sourceTree = "<group>"; };
-		D2BD20D12BC23AAE006DB6DF /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
-		D2BD20D32BC23AD6006DB6DF /* FoodDriveViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodDriveViewModel.swift; sourceTree = "<group>"; };
-		D2BD20D52BC2493D006DB6DF /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
+		D2DEE4542BC7687A0015AF89 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		D2F4ABBE2B39E76900494F89 /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
 		D2F4ABC22B39E85F00494F89 /* SignInEmailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInEmailViewModel.swift; sourceTree = "<group>"; };
 		F2604AE42BAF359400DBE59E /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -232,8 +224,7 @@
 				D283F9942B4367A700F0767E /* UserManager.swift */,
 				F2F4B1632B8298C300CA84D9 /* TrackerManager.swift */,
 				D241B49A2BBED20300846902 /* RecipesManager.swift */,
-				D2BD20C52BC23228006DB6DF /* LocationManager.swift */,
-				D2BD20C72BC233BB006DB6DF /* FoodDriveManager.swift */,
+				D20430632BCB08C1004ABF62 /* FoodDriveManager.swift */,
 			);
 			name = Firestore;
 			path = Core;
@@ -327,14 +318,11 @@
 		F2604AE12BAF354D00DBE59E /* Map */ = {
 			isa = PBXGroup;
 			children = (
-				D2BD20C92BC238F5006DB6DF /* MapViewController.swift */,
-				D2BD20D32BC23AD6006DB6DF /* FoodDriveViewModel.swift */,
-				D2BD20CB2BC23967006DB6DF /* MainViewController.swift */,
-				D2BD20CD2BC23A6B006DB6DF /* FoodDriveView.swift */,
-				D2BD20CF2BC23A91006DB6DF /* FoodDriveRow.swift */,
-				D2BD20D12BC23AAE006DB6DF /* MapView.swift */,
-				D2BD20D52BC2493D006DB6DF /* MapViewModel.swift */,
-				D21916132BC2E185003052B0 /* FoodDriveDetailView.swift */,
+				D2DEE4542BC7687A0015AF89 /* MapView.swift */,
+				D20430652BCB0AAB004ABF62 /* FoodDrivesViewModel.swift */,
+				D20430672BCB1A7F004ABF62 /* FoodDriveView.swift */,
+				D20430692BCB1AC3004ABF62 /* FoodDriveRow.swift */,
+				D204306B2BCB1BBF004ABF62 /* FoodViewDetailView.swift */,
 			);
 			name = Map;
 			sourceTree = "<group>";
@@ -447,42 +435,38 @@
 			buildActionMask = 2147483647;
 			files = (
 				D20D0CB42B0E7C2700DC1109 /* SettingsView.swift in Sources */,
+				D204306A2BCB1AC3004ABF62 /* FoodDriveRow.swift in Sources */,
 				D228ABA02B17FB990034E574 /* ProfileView.swift in Sources */,
 				D29CD57A2B0A8E0100C68EE3 /* MazahVersion1App.swift in Sources */,
 				D228AB9A2B17FAC60034E574 /* SettingViewModel.swift in Sources */,
 				D2AB73052B810A140064E409 /* AddFoodView.swift in Sources */,
 				D29E66F02B97FE940053833A /* HomeView.swift in Sources */,
+				D20430642BCB08C1004ABF62 /* FoodDriveManager.swift in Sources */,
 				D2AB73072B810D330064E409 /* EditFoodView.swift in Sources */,
-				D2BD20CC2BC23967006DB6DF /* MainViewController.swift in Sources */,
-				D2BD20D22BC23AAE006DB6DF /* MapView.swift in Sources */,
-				D2BD20C62BC23229006DB6DF /* LocationManager.swift in Sources */,
-				D21916142BC2E185003052B0 /* FoodDriveDetailView.swift in Sources */,
+				D2DEE4552BC7687A0015AF89 /* MapView.swift in Sources */,
 				D27124562BBEE8F90027D0BC /* RecipeDetailView.swift in Sources */,
-				D2BD20D62BC2493D006DB6DF /* MapViewModel.swift in Sources */,
 				D241B4992BBED1E500846902 /* RecipesViewModel.swift in Sources */,
 				D2AB73032B81098B0064E409 /* FoodTrackerView.swift in Sources */,
 				D29488972B93C79A00535608 /* RecentFoodsView.swift in Sources */,
 				D20D0CB22B0E797C00DC1109 /* RootView.swift in Sources */,
 				D25D64912B0A9EC50014D33C /* AuthenticationView.swift in Sources */,
-				D2BD20D02BC23A91006DB6DF /* FoodDriveRow.swift in Sources */,
-				D2BD20C82BC233BB006DB6DF /* FoodDriveManager.swift in Sources */,
 				D283F9952B4367A700F0767E /* UserManager.swift in Sources */,
-				D2BD20CE2BC23A6B006DB6DF /* FoodDriveView.swift in Sources */,
 				D2178DDC2B942CFC0049124C /* NavBar.swift in Sources */,
 				D241B49D2BBED24000846902 /* RecipeListView.swift in Sources */,
 				F287B8752BA2419D00BFDBF7 /* AllRecentFoodsView.swift in Sources */,
 				D27124582BBF01E60027D0BC /* SearchBar.swift in Sources */,
 				F2D9C5CF2B83E759001C6DCA /* TrackerViewModel.swift in Sources */,
-				D2BD20CA2BC238F5006DB6DF /* MapViewController.swift in Sources */,
+				D20430662BCB0AAB004ABF62 /* FoodDrivesViewModel.swift in Sources */,
 				D294889B2B93C80800535608 /* TrackerHomeView.swift in Sources */,
+				D20430682BCB1A7F004ABF62 /* FoodDriveView.swift in Sources */,
 				D2F4ABBF2B39E76900494F89 /* AuthenticationViewModel.swift in Sources */,
+				D204306C2BCB1BBF004ABF62 /* FoodViewDetailView.swift in Sources */,
 				D2F4ABC32B39E85F00494F89 /* SignInEmailViewModel.swift in Sources */,
 				D288646A2B0AA70F00D85D4F /* AuthenticationManager.swift in Sources */,
 				D228ABA22B17FE460034E574 /* FirstView.swift in Sources */,
 				F2F4B1642B8298C300CA84D9 /* TrackerManager.swift in Sources */,
 				D241B49B2BBED20400846902 /* RecipesManager.swift in Sources */,
 				D218EB772BBF77CF000E0A5D /* SignUpEmailView.swift in Sources */,
-				D2BD20D42BC23AD6006DB6DF /* FoodDriveViewModel.swift in Sources */,
 				D29488992B93C7C700535608 /* RecentFoodsViewModel.swift in Sources */,
 				D28864652B0AA30700D85D4F /* SignInEmailView.swift in Sources */,
 			);

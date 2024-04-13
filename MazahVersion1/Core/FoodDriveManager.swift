@@ -2,66 +2,47 @@
 //  FoodDriveManager.swift
 //  MazahVersion1
 //
-//  Created by Noga Gercsak on 4/6/24.
+//  Created by Noga Gercsak on 4/13/24.
 //
 
 import Foundation
 import FirebaseFirestore
 import FirebaseFirestoreSwift
 
-struct FoodDrive: Identifiable {
-    let id = UUID()
-    let name: String
-    let description: String
-    let location: GeoPoint
-    let address: String
-    let contact: String
+final class FoodDriveManager: ObservableObject {
     
-    init(name: String, description: String, location: GeoPoint, address: String, contact: String) {
-        self.name = name
-        self.description = description
-        self.location = location
-        self.address = address
-        self.contact = contact
-    }
-}
+    @Published var foodDrives: [FoodDrive] = []
+    
+    let db = Firestore.firestore()
 
-class FoodDriveManager {
-    static let shared = FoodDriveManager()
-    private let db = Firestore.firestore()
-    
-    func fetchNearbyFoodDrives(completion: @escaping ([FoodDrive]) -> Void) {
-        guard let userLocation = LocationManager.shared.currentLocation else {
-            completion([])
-            return
-        }
-        
-        let foodDrivesRef = db.collection("food_drives")
-        
-        let radiusInMeters: Double = 10000 // 10km
-        let center = GeoPoint(latitude: userLocation.coordinate.latitude, longitude: userLocation.coordinate.longitude)
-        
-        let query = foodDrivesRef.whereField("geolocation", isEqualTo: center)
-        
-        query.getDocuments { (querySnapshot, error) in
+    func fetchFoodDrives() {
+        db.collection("food_drives").getDocuments { snapshot, error in
             if let error = error {
-                print("Error getting food drives: \(error)")
-                completion([])
-            } else {
-                var foodDrives: [FoodDrive] = []
-                for document in querySnapshot!.documents {
-                    let data = document.data()
-                    let foodDrive = FoodDrive(
-                        name: data["name"] as? String ?? "",
-                        description: data["description"] as? String ?? "",
-                        location: data["geolocation"] as? GeoPoint ?? GeoPoint(latitude: 0, longitude: 0),
-                        address: data["address"] as? String ?? "",
-                        contact: data["contact"] as? String ?? ""
-                    )
-                    foodDrives.append(foodDrive)
+                print("Error fetching food drives: \(error.localizedDescription)")
+                return
+            }
+
+            if let snapshot = snapshot {
+                let fetchedFoodDrives = snapshot.documents.compactMap { document -> FoodDrive? in
+                    let foodDriveData = document.data()
+                    print("Food Drive Data: \(foodDriveData)")
+                    do {
+                        var decodedFoodDrive = try document.data(as: FoodDrive.self)
+                        // Handle GeoPoint decoding
+                        if let geoPoint = foodDriveData["geolocation"] as? GeoPoint {
+                            decodedFoodDrive.geolocation = geoPoint
+                        }
+                        return decodedFoodDrive
+                    } catch {
+                        print("Error decoding food drive: \(error.localizedDescription)")
+                        return nil
+                    }
                 }
-                completion(foodDrives)
+                DispatchQueue.main.async {
+                    self.foodDrives = fetchedFoodDrives
+                }
             }
         }
     }
 }
+

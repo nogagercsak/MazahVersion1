@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct RecipeListView: View {
+    
     @StateObject private var viewModel = RecipesViewModel()
     @State private var searchText = ""
 

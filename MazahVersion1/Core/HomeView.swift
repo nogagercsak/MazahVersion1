@@ -10,10 +10,9 @@ import SwiftUI
 struct HomeView: View {
     
     @Binding var showSignInView: Bool
-    @State private var foodDrives: [FoodDrive] = [
-            FoodDrive(name: "Food Drive 1", description: "Description 1", location: GeoPoint(latitude: 37.123, longitude: -122.456), address: "123 Main St, City, State, Zip", contact: "Contact 1"),
-            FoodDrive(name: "Food Drive 2", description: "Description 2", location: GeoPoint(latitude: 37.456, longitude: -122.789), address: "456 Elm St, City, State, Zip", contact: "Contact 2")
-        ]
+//    @State private var foodDrives: [FoodDrive] = [
+//            FoodDrive(name: "Food Drive 1", description: "Description 1", location: GeoPoint(latitude: 37.123, longitude: -122.456), address: "123 Main St, City, State, Zip", contact: "Contact 1"),
+//            FoodDrive(name: "Food Drive 2", description: "Description 2", location: GeoPoint(latitude: 37.456, longitude: -122.789), address: "456 Elm St, City, State, Zip", contact: "Contact 2")        ]
 
     var body: some View {
             NavigationView {
@@ -42,7 +41,7 @@ struct HomeView: View {
                             .cornerRadius(8)
                     }
                     
-                    NavigationLink(destination: FoodDriveView(foodDrives: $foodDrives)) {
+                    NavigationLink(destination: FoodDriveView()) {
                         Text("Donate Food")
                             .font(Font.custom("Radio Canada", size: 18))
                             .padding()

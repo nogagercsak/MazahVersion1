@@ -8,6 +8,8 @@ import Foundation
 import Combine
 import FirebaseFirestore
 import FirebaseFirestoreSwift
+
+
 final class AddFoodViewModel: ObservableObject {
     @Published var foodName: String = ""
     @Published var creationDate = Date()
